@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onli_studio/home_page.dart';
+import 'package:onli_studio/utils/app_routes.dart';
 
 import '../utils/config.dart';
 import '../utils/dynamic_sizes.dart';
@@ -43,7 +45,12 @@ Widget inputTextField(context, label, myController,
                       ),
                     ),
                     InkWell(
-                      onTap: function2 == "" ? () {} : function2,
+                      onTap: () {
+                        push(
+                          context,
+                          const HomePage(),
+                        );
+                      },
                       child: Icon(
                         Icons.arrow_forward_rounded,
                         color: myWhite,
