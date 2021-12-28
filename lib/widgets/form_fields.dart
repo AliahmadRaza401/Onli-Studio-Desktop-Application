@@ -5,7 +5,7 @@ import '../utils/config.dart';
 import '../utils/dynamic_sizes.dart';
 
 Widget inputTextField(context, label, myController,
-    {function, function2, password = false}) {
+    {function, function2,function3, password = false}) {
   return Container(
     width: dynamicWidth(context, .16),
     height: dynamicHeight(context, .04),
@@ -43,7 +43,7 @@ Widget inputTextField(context, label, myController,
                       ),
                     ),
                     InkWell(
-                      onTap: function2 == "" ? () {} : function2,
+                      onTap: function3 == "" ? () {} : function3,
                       child: Icon(
                         Icons.arrow_forward_rounded,
                         color: myWhite,

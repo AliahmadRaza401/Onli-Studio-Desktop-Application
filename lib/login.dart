@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:onli_studio/Home/home_page.dart';
+import 'package:onli_studio/utils/app_routes.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 import 'package:onli_studio/widgets/form_fields.dart';
@@ -65,6 +67,8 @@ class _LoginState extends State<Login> {
                         setState(() {
                           obscureText = !obscureText;
                         });
+                      }, function3: () {
+                        push(context, HomePage());
                       }),
                     ],
                   ),
