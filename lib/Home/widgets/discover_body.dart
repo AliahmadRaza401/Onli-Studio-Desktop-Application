@@ -28,79 +28,9 @@ class DiscoverBody extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               // shrinkWrap: true,
               children: [
-                Center(
-                  child: Container(
-                    height: dynamicHeight(context, 0.4),
-                    width: dynamicWidth(context, .7),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "assets/mainScrl1.png",
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        left: dynamicWidth(context, .02),
-                        top: dynamicHeight(context, .26),
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              text(
-                                context,
-                                "The Onli Presentation",
-                                .02,
-                                myDiscoverHeading,
-                                boldText: FontWeight.w500,
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              text(
-                                context,
-                                "The Fabric of Innovation",
-                                .012,
-                                mySubDiscoverHeading,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Center(
-                  child: Container(
-                    height: dynamicHeight(context, 0.4),
-                    width: dynamicWidth(context, .7),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "assets/mianScrl2.png",
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: Text(""),
-                  ),
-                ),
-                Container(
-                  height: dynamicHeight(context, 0.4),
-                  width: dynamicWidth(context, .7),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        "assets/mianScrl3.png",
-                      ),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Text(""),
-                ),
+                mainSliderBox(context, "assets/mainScrl1.png",),
+                mainSliderBox(context, "assets/mianScrl2.png",),
+                mainSliderBox(context, "assets/mianScrl3.png",),
               ],
             ),
           ),
@@ -113,6 +43,7 @@ class DiscoverBody extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               // shrinkWrap: true,
               children: [
+
                 Container(
                   height: dynamicHeight(context, 0.17),
                   width: dynamicWidth(context, .23),
@@ -201,4 +132,52 @@ class DiscoverBody extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget mainSliderBox(context, image) {
+  return Center(
+    child: Container(
+      height: dynamicHeight(context, 0.4),
+      width: dynamicWidth(context, .7),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            image,
+          ),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: dynamicWidth(context, .02),
+          top: dynamicHeight(context, .26),
+        ),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                text(
+                  context,
+                  "The Onli Presentation",
+                  .02,
+                  myDiscoverHeading,
+                  boldText: FontWeight.w500,
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                text(
+                  context,
+                  "The Fabric of Innovation",
+                  .012,
+                  mySubDiscoverHeading,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }
