@@ -20,7 +20,7 @@ class SideBar extends StatelessWidget {
           child: Text(
             "Onli Studio",
             style: TextStyle(
-              color: myblueTitle,
+              color: myBlueTitle,
               fontSize: dynamicWidth(context, 0.01),
               fontWeight: FontWeight.w700,
             ),

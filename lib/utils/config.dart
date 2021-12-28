@@ -9,6 +9,9 @@ const myGreyText = Color(0xff5f5f5f);
 const myOrange = Color(0xffff6624);
 const myGreen = Color(0xFF008000);
 const myRed = Color(0xFFff0000);
-const myblueTitle = Color(0xff7D72FF);
+const myBlueTitle = Color(0xff7D72FF);
+const myDiscoverHeading = Color(0xffE6F0E4);
+const mySubDiscoverHeading = Color(0xff919F8E);
+
 
 bool obscureText = true;

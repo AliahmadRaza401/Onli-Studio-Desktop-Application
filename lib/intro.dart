@@ -18,62 +18,62 @@ class _IntroState extends State<Intro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: dynamicWidth(context, 1),
-        height: dynamicHeight(context, 1),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              "assets/bg.png",
+      body: InkWell(
+        onTap: () {
+          push(
+            context,
+            const Login(),
+          );
+        },
+        child: Container(
+          width: dynamicWidth(context, 1),
+          height: dynamicHeight(context, 1),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                "assets/bg.png",
+              ),
+              fit: BoxFit.cover,
             ),
-            fit: BoxFit.cover,
           ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                top: dynamicWidth(context, .04),
-                left: dynamicWidth(context, .04),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                  top: dynamicWidth(context, .04),
+                  left: dynamicWidth(context, .04),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          "assets/Logo.png",
+                          scale: 8.0,
+                        ),
+                        heightBox(context, .02),
+                        text(
+                          context,
+                          DateFormat.yMMMMEEEEd()
+                              .format(DateTime.now())
+                              .toString(),
+                          .008,
+                          myWhite,
+                          boldText: FontWeight.w300,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.asset(
-                        "assets/Logo.png",
-                        scale: 8.0,
-                      ),
-                      heightBox(context, .02),
-                      text(
-                        context,
-                        DateFormat.yMMMMEEEEd()
-                            .format(DateTime.now())
-                            .toString(),
-                        .008,
-                        myWhite,
-                        boldText: FontWeight.w300,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                bottom: dynamicHeight(context, .1),
-                right: dynamicWidth(context, .12),
-              ),
-              child: InkWell(
-                onTap: () {
-                  push(
-                    context,
-                    const Login(),
-                  );
-                },
+              Padding(
+                padding: EdgeInsets.only(
+                  bottom: dynamicHeight(context, .1),
+                  right: dynamicWidth(context, .12),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -138,8 +138,8 @@ class _IntroState extends State<Intro> {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

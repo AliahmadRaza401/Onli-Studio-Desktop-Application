@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
+import 'package:onli_studio/widgets/text_widget.dart';
 
 class DiscoverBody extends StatelessWidget {
   const DiscoverBody({Key? key}) : super(key: key);
@@ -39,7 +40,37 @@ class DiscoverBody extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: Text(""),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        left: dynamicWidth(context, .02),
+                        top: dynamicHeight(context, .26),
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              text(
+                                context,
+                                "The Onli Presentation",
+                                .02,
+                                myDiscoverHeading,
+                                boldText: FontWeight.w500,
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              text(
+                                context,
+                                "The Fabric of Innovation",
+                                .012,
+                                mySubDiscoverHeading,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
                 Center(
