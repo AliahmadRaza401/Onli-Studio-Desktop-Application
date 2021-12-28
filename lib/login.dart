@@ -82,21 +82,21 @@ class _LoginState extends State<Login> {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: SizedBox(
-                  width: dynamicWidth(context, .08),
+                  width: dynamicWidth(context, .1),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Image.asset(
                         "assets/ethernet.png",
-                        scale: 8.0,
+                        width: dynamicWidth(context, .03),
                       ),
                       Image.asset(
                         "assets/accessibility.png",
-                        scale: 8.0,
+                        width: dynamicWidth(context, .03),
                       ),
                       Image.asset(
                         "assets/power.png",
-                        scale: 8.0,
+                        width: dynamicWidth(context, .03),
                       ),
                     ],
                   ),

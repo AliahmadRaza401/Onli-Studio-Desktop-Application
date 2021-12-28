@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onli_studio/Home/home_page.dart';
+import 'package:onli_studio/utils/app_routes.dart';
 
 import '../utils/config.dart';
 import '../utils/dynamic_sizes.dart';
 
 Widget inputTextField(context, label, myController,
-    {function, function2,function3, password = false}) {
+    {function, function2, function3, password = false}) {
   return Container(
     width: dynamicWidth(context, .16),
     height: dynamicHeight(context, .04),
@@ -43,7 +45,12 @@ Widget inputTextField(context, label, myController,
                       ),
                     ),
                     InkWell(
-                      onTap: function3 == "" ? () {} : function3,
+                      onTap: () {
+                        push(
+                          context,
+                          const HomePage(),
+                        );
+                      },
                       child: Icon(
                         Icons.arrow_forward_rounded,
                         color: myWhite,
