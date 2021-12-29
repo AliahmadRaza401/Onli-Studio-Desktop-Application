@@ -26,7 +26,7 @@ class _LoginState extends State<Login> {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              "assets/bg.png",
+              "assets/introBg.png",
             ),
             fit: BoxFit.cover,
           ),

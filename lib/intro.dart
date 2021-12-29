@@ -31,7 +31,7 @@ class _IntroState extends State<Intro> {
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                "assets/bg.png",
+                "assets/introBg.png",
               ),
               fit: BoxFit.cover,
             ),

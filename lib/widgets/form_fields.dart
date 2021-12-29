@@ -38,10 +38,9 @@ Widget inputTextField(context, label, myController,
                   children: [
                     InkWell(
                       onTap: function2 == "" ? () {} : function2,
-                      child: Icon(
-                        Icons.remove_red_eye_rounded,
-                        color: myWhite.withOpacity(.4),
-                        size: dynamicWidth(context, .01),
+                      child: Image.asset(
+                        "assets/password.png",
+                        height: dynamicWidth(context, .04),
                       ),
                     ),
                     InkWell(
@@ -69,8 +68,10 @@ Widget inputTextField(context, label, myController,
         border: const UnderlineInputBorder(
           borderSide: BorderSide(color: myWhite),
         ),
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: dynamicWidth(context, .006),
+        contentPadding: EdgeInsets.only(
+          right: dynamicWidth(context, .006),
+          left: dynamicWidth(context, .006),
+          bottom: dynamicHeight(context, .032),
         ),
       ),
     ),

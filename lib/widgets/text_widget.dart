@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/dynamic_sizes.dart';
 
-Widget text(context, text, size, color, {boldText = ""}) {
+Widget text(context, text, size, color, {boldText = "", maxLines = 9}) {
   return Text(
     text,
     style: TextStyle(
@@ -10,5 +10,6 @@ Widget text(context, text, size, color, {boldText = ""}) {
       fontSize: dynamicWidth(context, size),
       fontWeight: boldText == "" ? FontWeight.normal : boldText,
     ),
+    maxLines: maxLines,
   );
 }
