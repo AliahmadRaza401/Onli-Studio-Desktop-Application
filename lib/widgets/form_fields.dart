@@ -47,7 +47,9 @@ Widget inputTextField(context, label, myController,
                       onTap: () {
                         push(
                           context,
-                          const HomePage(),
+                          HomePage(
+                            menuNum: 0,
+                          ),
                         );
                       },
                       child: Icon(

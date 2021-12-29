@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:onli_studio/provider/my_provider.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 import 'package:onli_studio/widgets/text_widget.dart';
+import 'package:provider/provider.dart';
 
 class LearnBody extends StatefulWidget {
   const LearnBody({Key? key}) : super(key: key);
@@ -13,8 +15,34 @@ class LearnBody extends StatefulWidget {
 }
 
 class _LearnBodyState extends State<LearnBody> {
+  late MyProvider _myProvider;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  getTitle() {
+    if (_myProvider.selectedMenu == 0 || _myProvider.selectedMenu == 1) {
+      return "The Onli Protocol";
+    } else if (_myProvider.selectedMenu == 2) {
+      return "Onli ID........";
+    } else if (_myProvider.selectedMenu == 3) {
+      return "Onli Build";
+    } else if (_myProvider.selectedMenu == 4) {
+      return "The Onli Cloud";
+    } else if (_myProvider.selectedMenu == 5) {
+      return "The Onli One Network";
+    } else {
+      return "The Onli Protocol";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    _myProvider = Provider.of<MyProvider>(context, listen: false);
+    int menu = Provider.of<MyProvider>(context, listen: false).selectedMenu;
+    print('menu: $menu');
     return Container(
       height: dynamicHeight(context, 1),
       width: dynamicWidth(context, 1),
@@ -33,15 +61,12 @@ class _LearnBodyState extends State<LearnBody> {
               ),
               height: dynamicHeight(context, .43),
               width: dynamicWidth(context, 1),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xff0B0B0D),
-                    myGreyLight,
-                    Color(0xff0B0B0D),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.topRight,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    "assets/blackbg.png",
+                  ),
+                  fit: BoxFit.cover,
                 ),
               ),
               child: Column(
@@ -67,13 +92,14 @@ class _LearnBodyState extends State<LearnBody> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "The Online Protocol",
+                                getTitle(),
                                 style: TextStyle(
                                   color: myWhite,
                                   fontSize: dynamicWidth(context, 0.015),
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
+                              text(context, "${menu}", .01, myLightGreyText),
                               Text(
                                 "The Fabric of Innovation",
                                 style: TextStyle(

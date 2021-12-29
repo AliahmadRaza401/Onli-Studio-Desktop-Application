@@ -5,23 +5,28 @@ import 'package:onli_studio/Home/widgets/learn_body.dart';
 import 'package:onli_studio/Home/widgets/pricing_body.dart';
 import 'package:onli_studio/Home/widgets/resources_body.dart';
 import 'package:onli_studio/Home/widgets/sidebar.dart';
+import 'package:onli_studio/provider/my_provider.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
+  int menuNum;
+  HomePage({required this.menuNum});
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
+
   @override
   Widget build(BuildContext context) {
     var mediaWidth = MediaQuery.of(context).size.width;
     var mediaHeight = MediaQuery.of(context).size.height;
 
     return DefaultTabController(
+      initialIndex: widget.menuNum,
       length: 5,
       child: Scaffold(
         body: SafeArea(

@@ -68,7 +68,7 @@ class _LoginState extends State<Login> {
                           obscureText = !obscureText;
                         });
                       }, function3: () {
-                        push(context, HomePage());
+                        push(context, HomePage(menuNum: 0,));
                       }),
                     ],
                   ),
