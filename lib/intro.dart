@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:onli_studio/app_download.dart';
 import 'package:onli_studio/utils/app_routes.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
@@ -125,10 +126,16 @@ class _IntroState extends State<Intro> {
                                 0xff00ACED,
                                 "assets/twitter.png",
                               ),
-                              iconBox(
-                                context,
-                                0xff202020,
-                                "assets/buttonDark.png",
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => AppDownload()));
+                                },
+                                child: iconBox(
+                                  context,
+                                  0xff202020,
+                                  "assets/buttonDark.png",
+                                ),
                               ),
                             ],
                           ),
