@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:onli_studio/intro.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +20,10 @@ class MyApp extends StatelessWidget {
         title: 'Onli Studio',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.grey,
+          appBarTheme: Theme.of(context)
+              .appBarTheme
+              .copyWith(systemOverlayStyle: SystemUiOverlayStyle.light),
         ),
         home: const Intro(),
       ),
