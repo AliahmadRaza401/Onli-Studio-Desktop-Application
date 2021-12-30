@@ -6,13 +6,16 @@ import '../utils/config.dart';
 import '../utils/dynamic_sizes.dart';
 
 Widget inputTextField(context, label, myController,
-    {function, function2, function3, password = false}) {
+    {function, function2, function3, password = false, prefix = false}) {
   return Container(
     width: dynamicWidth(context, .16),
     height: dynamicHeight(context, .04),
     decoration: BoxDecoration(
-      color: myWhite.withOpacity(.2),
-      border: Border.all(color: myWhite),
+      borderRadius: BorderRadius.circular(
+        prefix == true ? dynamicWidth(context, .002) : 0,
+      ),
+      color: prefix == true ? myWhite.withOpacity(.1) : myWhite.withOpacity(.2),
+      border: Border.all(color: prefix == true ? noColor : myWhite),
     ),
     child: TextFormField(
       autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -28,6 +31,13 @@ Widget inputTextField(context, label, myController,
         fontSize: dynamicWidth(context, .01),
       ),
       decoration: InputDecoration(
+        prefixIcon: prefix == false
+            ? null
+            : Icon(
+                Icons.search_rounded,
+                color: myGreyText,
+                size: dynamicWidth(context, .011),
+              ),
         suffixIcon: password == false
             ? null
             : SizedBox(
@@ -60,14 +70,19 @@ Widget inputTextField(context, label, myController,
                   ],
                 ),
               ),
+        hintText: prefix == true ? label : "",
+        hintStyle: TextStyle(
+          color: myGreyText,
+          fontSize: dynamicWidth(context, .009),
+        ),
         enabledBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: myWhite),
+          borderSide: BorderSide(color: noColor),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: myWhite),
+          borderSide: BorderSide(color: noColor),
         ),
         border: const UnderlineInputBorder(
-          borderSide: BorderSide(color: myWhite),
+          borderSide: BorderSide(color: noColor),
         ),
         contentPadding: EdgeInsets.only(
           right: dynamicWidth(context, .006),

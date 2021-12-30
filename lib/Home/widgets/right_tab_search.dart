@@ -30,7 +30,7 @@ class _RightTabSearchState extends State<RightTabSearch> {
               padding: EdgeInsets.symmetric(
                 vertical: dynamicHeight(context, .024),
               ),
-              child: inputTextField(context, "Search", search),
+              child: inputTextField(context, "Search", search, prefix: true),
             ),
             Row(
               children: [
