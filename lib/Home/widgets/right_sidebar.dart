@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:onli_studio/Home/widgets/right_tab_search.dart';
+import 'package:onli_studio/Home/widgets/right_tab_settings.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 
@@ -15,33 +17,45 @@ class _RightSideBarState extends State<RightSideBar> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: myGreyDark,
-          toolbarHeight: dynamicHeight(context, .1),
-          bottom: TabBar(
-            onTap: (index) {
-              print(index);
-            },
-            isScrollable: true,
-            unselectedLabelColor: myGreyText,
-            unselectedLabelStyle: TextStyle(
-              fontSize: dynamicHeight(context, 0.02),
-              fontWeight: FontWeight.bold,
-            ),
-            labelColor: myWhite,
-            labelStyle: TextStyle(
-              fontSize: dynamicHeight(context, 0.02),
-              fontWeight: FontWeight.bold,
-            ),
-            indicatorColor: noColor,
-            tabs: const [
-              Tab(text: "Discover"),
-              Tab(text: "Learn"),
-            ],
+        backgroundColor: const Color(0xff141414),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(
+            dynamicHeight(context, .08),
           ),
-          automaticallyImplyLeading: false,
+          child: AppBar(
+            backgroundColor: myGreyDark,
+            toolbarHeight: dynamicHeight(context, .1),
+            elevation: 0.0,
+            bottom: TabBar(
+              onTap: (index) {
+                print(index);
+              },
+              isScrollable: true,
+              unselectedLabelColor: myGreyText,
+              unselectedLabelStyle: TextStyle(
+                fontSize: dynamicHeight(context, 0.016),
+                fontWeight: FontWeight.bold,
+              ),
+              labelColor: myWhite,
+              labelStyle: TextStyle(
+                fontSize: dynamicHeight(context, 0.016),
+                fontWeight: FontWeight.bold,
+              ),
+              indicatorColor: noColor,
+              tabs: const [
+                Tab(text: "Search"),
+                Tab(text: "My Settings"),
+              ],
+            ),
+            automaticallyImplyLeading: false,
+          ),
         ),
-        backgroundColor: myWhite,
+        body: const TabBarView(
+          children: [
+            RightTabSearch(),
+            RightTabSettings(),
+          ],
+        ),
       ),
     );
   }

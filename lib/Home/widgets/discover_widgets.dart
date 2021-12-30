@@ -101,18 +101,23 @@ Widget secondSlider(context, image, headingColor, subHeadingColor) {
   );
 }
 
-Widget thirdSlider(context, image, title) {
+Widget thirdSlider(context, image, title, {check = false}) {
   return Padding(
     padding: EdgeInsets.symmetric(
       horizontal: dynamicWidth(context, .002),
     ),
     child: SizedBox(
+      height: check == true
+          ? dynamicHeight(context, .14)
+          : dynamicHeight(context, .17),
       width: dynamicWidth(context, .18),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            height: dynamicHeight(context, 0.1),
+            height: check == true
+                ? dynamicHeight(context, .08)
+                : dynamicHeight(context, .1),
             width: dynamicWidth(context, .23),
             child: Image.asset(
               image,

@@ -115,7 +115,7 @@ class DiscoverBody extends StatelessWidget {
                 children: [
                   thirdSlider(
                     context,
-                    "assets/OExperience.001.png",
+                    "assets/OExperience.png",
                     "About Onli",
                   ),
                   thirdSlider(
