@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:onli_studio/Home/widgets/build_body.dart';
+import 'package:onli_studio/Home/widgets/build_sidebar.dart';
 import 'package:onli_studio/Home/widgets/discover_body.dart';
 import 'package:onli_studio/Home/widgets/learn_body.dart';
-import 'package:onli_studio/Home/widgets/pricing_body.dart';
-import 'package:onli_studio/Home/widgets/resources_body.dart';
 import 'package:onli_studio/Home/widgets/left_sidebar.dart';
+import 'package:onli_studio/Home/widgets/pricing_body.dart';
+import 'package:onli_studio/Home/widgets/pricing_sidebar.dart';
+import 'package:onli_studio/Home/widgets/resources_body.dart';
 import 'package:onli_studio/Home/widgets/right_sidebar.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
@@ -19,6 +21,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int tabBarIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     var mediaWidth = MediaQuery.of(context).size.width;
@@ -53,7 +57,9 @@ class _HomePageState extends State<HomePage> {
                           backgroundColor: myGreyDark,
                           bottom: TabBar(
                             onTap: (index) {
-                              print(index);
+                              setState(() {
+                                tabBarIndex = index;
+                              });
                             },
                             isScrollable: true,
                             unselectedLabelColor: myGreyText,
@@ -97,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                   width: dynamicWidth(context, .16),
                   height: dynamicHeight(context, 1),
                   color: myGreyLight,
-                  child: const RightSideBar(),
+                  child: _getSideBar(tabBarIndex),
                 ),
               ],
             ),
@@ -105,5 +111,29 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  _getSideBar(int page) {
+    switch (page) {
+      case 0:
+        return const RightSideBar();
+      case 1:
+        return const RightSideBar();
+      case 2:
+        return const BuildSideBar();
+      case 3:
+        return const PricingSideBar();
+      case 4:
+        return const RightSideBar();
+      default:
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: const <Widget>[
+            Text(
+              ('TabBar Index Error'),
+            ),
+          ],
+        );
+    }
   }
 }
