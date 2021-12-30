@@ -4,7 +4,8 @@ import 'package:onli_studio/Home/widgets/discover_body.dart';
 import 'package:onli_studio/Home/widgets/learn_body.dart';
 import 'package:onli_studio/Home/widgets/pricing_body.dart';
 import 'package:onli_studio/Home/widgets/resources_body.dart';
-import 'package:onli_studio/Home/widgets/sidebar.dart';
+import 'package:onli_studio/Home/widgets/left_sidebar.dart';
+import 'package:onli_studio/Home/widgets/right_sidebar.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                   width: dynamicWidth(context, .14),
                   height: dynamicHeight(context, 1),
                   color: myGreyLight,
-                  child: const SideBar(),
+                  child: const LeftSideBar(),
                 ),
                 Container(
                   width: dynamicWidth(context, .7),
@@ -96,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                   width: dynamicWidth(context, .16),
                   height: dynamicHeight(context, 1),
                   color: myGreyLight,
-                  child: const Center(child: Text("3")),
+                  child: const RightSideBar(),
                 ),
               ],
             ),

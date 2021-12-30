@@ -5,14 +5,14 @@ import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 import 'package:provider/provider.dart';
 
-class SideBar extends StatefulWidget {
-  const SideBar({Key? key}) : super(key: key);
+class LeftSideBar extends StatefulWidget {
+  const LeftSideBar({Key? key}) : super(key: key);
 
   @override
-  State<SideBar> createState() => _SideBarState();
+  State<LeftSideBar> createState() => _LeftSideBarState();
 }
 
-class _SideBarState extends State<SideBar> {
+class _LeftSideBarState extends State<LeftSideBar> {
   late MyProvider _myProvider;
 
   @override
