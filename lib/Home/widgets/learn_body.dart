@@ -26,7 +26,7 @@ class _LearnBodyState extends State<LearnBody> {
     if (_myProvider.selectedMenu == 0 || _myProvider.selectedMenu == 1) {
       return "The Onli Protocol";
     } else if (_myProvider.selectedMenu == 2) {
-      return "Onli ID........";
+      return "Onli ID";
     } else if (_myProvider.selectedMenu == 3) {
       return "Onli Build";
     } else if (_myProvider.selectedMenu == 4) {
@@ -99,7 +99,6 @@ class _LearnBodyState extends State<LearnBody> {
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
-                              text(context, "${menu}", .01, myLightGreyText),
                               Text(
                                 "The Fabric of Innovation",
                                 style: TextStyle(

@@ -69,7 +69,7 @@ class _SideBarState extends State<SideBar> {
                       });
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => HomePage(
-                                menuNum: 2,
+                                menuNum: 1,
                               )));
                     },
                     child: heading(context, "Onli iD", "")),
@@ -80,7 +80,7 @@ class _SideBarState extends State<SideBar> {
                       });
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => HomePage(
-                                menuNum: 3,
+                                menuNum: 1,
                               )));
                     },
                     child: heading(context, "Onli Build", "")),
@@ -91,7 +91,7 @@ class _SideBarState extends State<SideBar> {
                       });
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => HomePage(
-                                menuNum: 4,
+                                menuNum: 1,
                               )));
                     },
                     child: heading(context, "Onli Cloud", "")),
@@ -102,7 +102,7 @@ class _SideBarState extends State<SideBar> {
                       });
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => HomePage(
-                                menuNum: 5,
+                                menuNum: 1,
                               )));
                     },
                     child: heading(context, "Onli One", "")),
