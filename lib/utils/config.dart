@@ -14,5 +14,4 @@ const myBlueTitle = Color(0xff7D72FF);
 const myDiscoverHeading = Color(0xffE6F0E4);
 const mySubDiscoverHeading = Color(0xff919F8E);
 
-
 bool obscureText = true;

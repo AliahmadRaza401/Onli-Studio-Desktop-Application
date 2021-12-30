@@ -14,12 +14,12 @@ class _ResourcesBodyState extends State<ResourcesBody> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.bottomCenter,
-      color: Color(0xffCCD0CA),
+      color: const Color(0xffCCD0CA),
       child: Column(
         children: [
           Row(
             children: [
-              Container(
+              SizedBox(
                 width: dynamicWidth(context, 0.17),
                 height: dynamicHeight(context, 0.8),
                 // color: Colors.red,
@@ -30,7 +30,7 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                       "Stories",
                       style: TextStyle(
                         fontSize: dynamicWidth(context, 0.04),
-                        color: Color(0xff959894),
+                        color: const Color(0xff959894),
                       ),
                     ),
                     Image.asset(
@@ -69,7 +69,7 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                           0.007,
                           Colors.red,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         text(
@@ -78,7 +78,7 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                           0.007,
                           Colors.black,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         text(
@@ -92,7 +92,7 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                     SizedBox(
                       height: dynamicHeight(context, 0.02),
                     ),
-                    Container(
+                    SizedBox(
                       // color: Colors.red,
                       height: dynamicHeight(context, 0.5),
                       child: SingleChildScrollView(
@@ -122,7 +122,7 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                 ),
               ),
               //Last Container
-              Container(
+              SizedBox(
                 width: dynamicWidth(context, 0.08),
                 height: dynamicHeight(context, 0.8),
                 // color: Colors.red,
@@ -137,9 +137,9 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                           context,
                           "24",
                           0.015,
-                          Color(0xff464646),
+                          const Color(0xff464646),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Column(
@@ -150,13 +150,13 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                               context,
                               "MARCH",
                               0.007,
-                              Color(0xff858685),
+                              const Color(0xff858685),
                             ),
                             text(
                               context,
                               "2021",
                               0.007,
-                              Color(0xff858685),
+                              const Color(0xff858685),
                             ),
                           ],
                         ),

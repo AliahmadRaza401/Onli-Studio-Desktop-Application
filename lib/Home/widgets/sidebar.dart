@@ -23,112 +23,123 @@ class _SideBarState extends State<SideBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: dynamicHeight(context, 1),
       // color: Colors.amber,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            // height: dynamicHeight(context, 1),
-            // color: Colors.amber,
-            child: Column(
-              children: [
-                Container(
-                  height: dynamicHeight(context, .08),
+          Column(
+            children: [
+              Container(
+                height: dynamicHeight(context, .08),
+                color: myGreyDark,
+                alignment: Alignment.topLeft,
+                padding: EdgeInsets.only(
+                  top: dynamicHeight(context, .03),
+                  left: dynamicWidth(context, .009),
+                ),
+                child: Text(
+                  "Onli Studio",
+                  style: TextStyle(
+                    color: myBlueTitle,
+                    fontSize: dynamicWidth(context, 0.01),
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              InkWell(
+                  onTap: () {
+                    setState(() {
+                      _myProvider.selectMenu(1);
+                    });
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(
+                          menuNum: 1,
+                        ),
+                      ),
+                    );
+                  },
+                  child: heading(context, "Onli", "")),
+              InkWell(
+                  onTap: () {
+                    setState(() {
+                      _myProvider.selectMenu(2);
+                    });
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(
+                          menuNum: 1,
+                        ),
+                      ),
+                    );
+                  },
+                  child: heading(context, "Onli iD", "")),
+              InkWell(
+                  onTap: () {
+                    setState(() {
+                      _myProvider.selectMenu(3);
+                    });
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(
+                          menuNum: 1,
+                        ),
+                      ),
+                    );
+                  },
+                  child: heading(context, "Onli Build", "")),
+              InkWell(
+                  onTap: () {
+                    setState(() {
+                      _myProvider.selectMenu(4);
+                    });
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(
+                          menuNum: 1,
+                        ),
+                      ),
+                    );
+                  },
+                  child: heading(context, "Onli Cloud", "")),
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _myProvider.selectMenu(5);
+                    });
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(
+                          menuNum: 1,
+                        ),
+                      ),
+                    );
+                  },
+                  child: heading(context, "Onli One", "")),
+              Container(
+                margin: EdgeInsets.symmetric(
+                  horizontal: dynamicWidth(context, .01),
+                ),
+                child: const Divider(
                   color: myGreyDark,
-                  alignment: Alignment.topLeft,
-                  padding: EdgeInsets.only(
-                    top: dynamicHeight(context, .03),
-                    left: dynamicWidth(context, .009),
-                  ),
-                  child: Text(
-                    "Onli Studio",
-                    style: TextStyle(
-                      color: myBlueTitle,
-                      fontSize: dynamicWidth(context, 0.01),
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
+                  thickness: 2,
                 ),
-                InkWell(
-                    onTap: () {
-                      setState(() {
-                        _myProvider.selectMenu(1);
-                      });
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => HomePage(
-                                menuNum: 1,
-                              )));
-                    },
-                    child: heading(context, "Onli", "")),
-                InkWell(
-                    onTap: () {
-                      setState(() {
-                        _myProvider.selectMenu(2);
-                      });
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => HomePage(
-                                menuNum: 1,
-                              )));
-                    },
-                    child: heading(context, "Onli iD", "")),
-                InkWell(
-                    onTap: () {
-                      setState(() {
-                        _myProvider.selectMenu(3);
-                      });
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => HomePage(
-                                menuNum: 1,
-                              )));
-                    },
-                    child: heading(context, "Onli Build", "")),
-                InkWell(
-                    onTap: () {
-                      setState(() {
-                        _myProvider.selectMenu(4);
-                      });
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => HomePage(
-                                menuNum: 1,
-                              )));
-                    },
-                    child: heading(context, "Onli Cloud", "")),
-                GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _myProvider.selectMenu(5);
-                      });
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => HomePage(
-                                menuNum: 1,
-                              )));
-                    },
-                    child: heading(context, "Onli One", "")),
-                Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: dynamicWidth(context, .01),
-                  ),
-                  child: Divider(
-                    color: myGreyDark,
-                    thickness: 2,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                heading(context, "Collections", ""),
-                SizedBox(
-                  height: 10,
-                ),
-                heading(context, "Protocol Containers", "(13)"),
-                heading(context, "Infrastructure", "(20)"),
-                heading(context, "Platform", "(20)"),
-                heading(context, "Tolls", "(20)"),
-                heading(context, "Cloud OS", "(20)"),
-              ],
-            ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              heading(context, "Collections", ""),
+              const SizedBox(
+                height: 10,
+              ),
+              heading(context, "Protocol Containers", "(13)"),
+              heading(context, "Infrastructure", "(20)"),
+              heading(context, "Platform", "(20)"),
+              heading(context, "Tolls", "(20)"),
+              heading(context, "Cloud OS", "(20)"),
+            ],
           ),
           Container(
             color: Colors.black,

@@ -1,4 +1,3 @@
-// ignore_for_file: unused_field
 import 'package:flutter/material.dart';
 
 class MyProvider extends ChangeNotifier {
@@ -9,8 +8,6 @@ class MyProvider extends ChangeNotifier {
   }
 
   int selectedMenu = 0;
-
-
 
   void selectMenu(int num) {
     selectedMenu = num;

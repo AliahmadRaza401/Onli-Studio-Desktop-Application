@@ -1,6 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
@@ -12,7 +9,7 @@ class DiscoverBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         vertical: 10,
         horizontal: 10,
       ),
@@ -45,45 +42,45 @@ class DiscoverBody extends StatelessWidget {
 
             //2nd slider
             SizedBox(
-              height: dynamicHeight(context, 0.13),
+              height: dynamicHeight(context, 0.12),
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
                   secondSlider(
                     context,
                     "assets/miniScrl1.png",
-                    Color(0xff585855),
-                    Color(0xff585855),
+                    const Color(0xff585855),
+                    const Color(0xff585855),
                   ),
                   secondSlider(
                     context,
                     "assets/miniScrl2.png",
-                    Color(0xffF4C19B),
-                    Color(0xffEAEADC),
+                    const Color(0xffF4C19B),
+                    const Color(0xffEAEADC),
                   ),
                   secondSlider(
                     context,
                     "assets/miniScrl3.png",
-                    Color(0xff6D97EA),
-                    Color(0xff6D6D6D),
+                    const Color(0xff6D97EA),
+                    const Color(0xff6D6D6D),
                   ),
                   secondSlider(
                     context,
                     "assets/miniScrl1.png",
-                    Color(0xff585855),
-                    Color(0xff585855),
+                    const Color(0xff585855),
+                    const Color(0xff585855),
                   ),
                   secondSlider(
                     context,
                     "assets/miniScrl2.png",
-                    Color(0xffF4C19B),
-                    Color(0xffEAEADC),
+                    const Color(0xffF4C19B),
+                    const Color(0xffEAEADC),
                   ),
                   secondSlider(
                     context,
                     "assets/miniScrl3.png",
-                    Color(0xff6D97EA),
-                    Color(0xff6D6D6D),
+                    const Color(0xff6D97EA),
+                    const Color(0xff6D6D6D),
                   ),
                 ],
               ),
@@ -91,26 +88,26 @@ class DiscoverBody extends StatelessWidget {
 
             // 3rd Slider
 
-            heightBox(context, .02),
+            heightBox(context, .021),
             Row(
               children: [
                 text(
                   context,
                   "Articles",
                   .014,
-                  Color(0xff6D6D6D),
+                  const Color(0xff6D6D6D),
                 ),
               ],
             ),
 
             Divider(
-              color: Color(0xff2E2E2E),
-              height: dynamicHeight(context, .02),
+              color: const Color(0xff2E2E2E),
+              height: dynamicHeight(context, .018),
               thickness: 2.0,
             ),
 
             SizedBox(
-              height: dynamicHeight(context, 0.19),
+              height: dynamicHeight(context, 0.17),
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
@@ -126,12 +123,12 @@ class DiscoverBody extends StatelessWidget {
                   ),
                   thirdSlider(
                     context,
-                    "assets/miniScrl1.png",
+                    "assets/OExperience.001.png",
                     "Tutorial",
                   ),
                   thirdSlider(
                     context,
-                    "assets/miniScrl1.png",
+                    "assets/mianScrl2.png",
                     "Presentation",
                   ),
                   thirdSlider(
@@ -155,37 +152,65 @@ class DiscoverBody extends StatelessWidget {
 
             // 4th Slider
 
-            heightBox(context, .02),
+            heightBox(context, .021),
             Row(
               children: [
                 text(
                   context,
                   "Community",
                   .014,
-                  Color(0xff6D6D6D),
+                  const Color(0xff6D6D6D),
                 ),
               ],
             ),
 
             Divider(
-              color: Color(0xff2E2E2E),
+              color: const Color(0xff2E2E2E),
               height: dynamicHeight(context, .02),
               thickness: 2.0,
             ),
 
             SizedBox(
-              height: dynamicHeight(context, 0.17),
+              height: dynamicHeight(context, 0.15),
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
                   fourthSlider(
                     context,
-                    "assets/OExperience.001.png",
+                    "assets/p1.png",
+                  ),
+                  fourthSlider(
+                    context,
+                    "assets/p2.png",
+                  ),
+                  fourthSlider(
+                    context,
+                    "assets/p3.png",
+                  ),
+                  fourthSlider(
+                    context,
+                    "assets/p1.png",
+                  ),
+                  fourthSlider(
+                    context,
+                    "assets/p2.png",
+                  ),
+                  fourthSlider(
+                    context,
+                    "assets/p3.png",
+                  ),
+                  fourthSlider(
+                    context,
+                    "assets/p1.png",
+                  ),
+                  fourthSlider(
+                    context,
+                    "assets/p2.png",
                   ),
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
           ],
@@ -198,7 +223,6 @@ class DiscoverBody extends StatelessWidget {
 Widget mainSliderBox(context, image) {
   return Center(
     child: Container(
-      height: dynamicHeight(context, 0.32),
       width: dynamicWidth(context, .7),
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -249,7 +273,6 @@ Widget secondSlider(context, image, headingColor, subHeadingColor) {
       horizontal: dynamicWidth(context, .002),
     ),
     child: Container(
-      height: dynamicHeight(context, 0.13),
       width: dynamicWidth(context, .23),
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -301,27 +324,26 @@ Widget thirdSlider(context, image, title) {
       horizontal: dynamicWidth(context, .002),
     ),
     child: SizedBox(
-      height: dynamicHeight(context, 0.2),
       width: dynamicWidth(context, .18),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            height: dynamicHeight(context, 0.12),
+            height: dynamicHeight(context, 0.1),
             width: dynamicWidth(context, .23),
             child: Image.asset(
               image,
               fit: BoxFit.cover,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Row(
             children: [
               text(
                 context,
                 title,
                 .008,
-                Color(0xff6F6F6F),
+                const Color(0xff6F6F6F),
                 boldText: FontWeight.w600,
               ),
             ],
@@ -332,7 +354,7 @@ Widget thirdSlider(context, image, title) {
                 context,
                 "Author Name",
                 .008,
-                Color(0xff313131),
+                const Color(0xff313131),
                 boldText: FontWeight.w600,
               ),
             ],
@@ -360,7 +382,7 @@ Widget thirdSlider(context, image, title) {
                 size: dynamicWidth(context, .006),
               ),
               widthBox(context, .01),
-              text(context, "(23)", .006, Color(0xff313131))
+              text(context, "(23)", .006, const Color(0xff313131))
             ],
           ),
         ],
@@ -375,27 +397,26 @@ Widget fourthSlider(context, image) {
       horizontal: dynamicWidth(context, .002),
     ),
     child: SizedBox(
-      height: dynamicHeight(context, 0.2),
       width: dynamicWidth(context, .14),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            height: dynamicHeight(context, 0.12),
+            height: dynamicHeight(context, 0.1),
             width: dynamicWidth(context, .14),
             child: Image.asset(
               image,
               fit: BoxFit.cover,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Row(
             children: [
               text(
                 context,
-                "title",
+                "Dhryl Anton",
                 .008,
-                Color(0xff6F6F6F),
+                const Color(0xff6F6F6F),
                 boldText: FontWeight.w600,
               ),
             ],
@@ -404,9 +425,9 @@ Widget fourthSlider(context, image) {
             children: [
               text(
                 context,
-                "Author Name",
-                .008,
-                Color(0xff313131),
+                "CEO THE ONLI CORPORATION",
+                .005,
+                const Color(0xff313131),
                 boldText: FontWeight.w600,
               ),
             ],

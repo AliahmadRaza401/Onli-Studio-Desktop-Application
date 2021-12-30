@@ -56,62 +56,58 @@ class _LearnBodyState extends State<LearnBody> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        text(context, "10 Articles", .01, myLightGreyText),
-                      ],
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      text(context, "10 Articles", .01, myLightGreyText),
+                    ],
                   ),
-                  Container(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          alignment: Alignment.topLeft,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                getTitle(),
-                                style: TextStyle(
-                                  color: myWhite,
-                                  fontSize: dynamicWidth(context, 0.015),
-                                  fontWeight: FontWeight.w700,
-                                ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        alignment: Alignment.topLeft,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              getTitle(),
+                              style: TextStyle(
+                                color: myWhite,
+                                fontSize: dynamicWidth(context, 0.015),
+                                fontWeight: FontWeight.w700,
                               ),
-                              Text(
-                                getSubTitle(),
-                                style: TextStyle(
-                                  color: myLightGreyText,
-                                  fontSize: dynamicWidth(context, 0.01),
-                                ),
+                            ),
+                            Text(
+                              getSubTitle(),
+                              style: TextStyle(
+                                color: myLightGreyText,
+                                fontSize: dynamicWidth(context, 0.01),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: dynamicWidth(context, 0.24),
-                          alignment: Alignment.topLeft,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                getDec(),
-                                style: TextStyle(
-                                  color: Color(0xffF2FAF0),
-                                  fontSize: dynamicWidth(context, 0.01),
-                                ),
+                      ),
+                      Container(
+                        width: dynamicWidth(context, 0.24),
+                        alignment: Alignment.topLeft,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              getDec(),
+                              style: TextStyle(
+                                color: Color(0xffF2FAF0),
+                                fontSize: dynamicWidth(context, 0.01),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -162,7 +158,7 @@ class _LearnBodyState extends State<LearnBody> {
                             ],
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           width: dynamicWidth(context, 0.2),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -176,7 +172,7 @@ class _LearnBodyState extends State<LearnBody> {
                             ],
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           width: dynamicWidth(context, 0.16),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -193,59 +189,53 @@ class _LearnBodyState extends State<LearnBody> {
                       ],
                     ),
                   ),
-                  Container(
-                    child: Column(
-                      children: [
-                        Divider(
-                          thickness: 1.5,
-                          color: Color(0xffCCCCCC),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Icon(
-                                    Icons.menu,
-                                    size: dynamicWidth(context, 0.015),
-                                  ),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Container(
-                                    width: 2,
-                                    color: Color(0xffCCCCCC),
-                                    child: Text(""),
-                                  ),
-                                ],
+                  Column(
+                    children: [
+                      Divider(
+                        thickness: 1.5,
+                        color: Color(0xffCCCCCC),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 15,
                               ),
-                            ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  text(context, "Download WhitePaper", 0.006,
-                                      Color(0xff757171)),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Icon(
-                                    Icons.file_download_outlined,
-                                    size: dynamicWidth(context, 0.015),
-                                  ),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                ],
+                              Icon(
+                                Icons.menu,
+                                size: dynamicWidth(context, 0.015),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Container(
+                                width: 2,
+                                color: Color(0xffCCCCCC),
+                                child: Text(""),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              text(context, "Download WhitePaper", 0.006,
+                                  Color(0xff757171)),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Icon(
+                                Icons.file_download_outlined,
+                                size: dynamicWidth(context, 0.015),
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 5,

@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-            providers: multiProviders,
+      providers: multiProviders,
       child: MaterialApp(
         title: 'Onli',
         debugShowCheckedModeBanner: false,

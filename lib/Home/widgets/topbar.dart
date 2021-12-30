@@ -3,6 +3,8 @@ import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 
 class TopBar extends StatelessWidget {
+  const TopBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,13 +34,11 @@ class TopBar extends StatelessWidget {
   }
 
   Widget title(BuildContext context, text, color) {
-    return Container(
-      child: Text(
-        text,
-        style: TextStyle(
-          color: color,
-          fontSize: dynamicHeight(context, 0.02),
-        ),
+    return Text(
+      text,
+      style: TextStyle(
+        color: color,
+        fontSize: dynamicHeight(context, 0.02),
       ),
     );
   }

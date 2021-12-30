@@ -62,14 +62,25 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                       heightBox(context, .02),
-                      inputTextField(context, "Enter Password", password,
-                          password: true, function2: () {
-                        setState(() {
-                          obscureText = !obscureText;
-                        });
-                      }, function3: () {
-                        push(context, HomePage(menuNum: 0,));
-                      }),
+                      inputTextField(
+                        context,
+                        "Enter Password",
+                        password,
+                        password: true,
+                        function2: () {
+                          setState(() {
+                            obscureText = !obscureText;
+                          });
+                        },
+                        function3: () {
+                          push(
+                            context,
+                            const HomePage(
+                              menuNum: 0,
+                            ),
+                          );
+                        },
+                      ),
                     ],
                   ),
                 ),

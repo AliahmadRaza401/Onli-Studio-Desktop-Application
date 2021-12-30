@@ -5,21 +5,19 @@ import 'package:onli_studio/Home/widgets/learn_body.dart';
 import 'package:onli_studio/Home/widgets/pricing_body.dart';
 import 'package:onli_studio/Home/widgets/resources_body.dart';
 import 'package:onli_studio/Home/widgets/sidebar.dart';
-import 'package:onli_studio/provider/my_provider.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  int menuNum;
-  HomePage({required this.menuNum});
+  final int menuNum;
+
+  const HomePage({Key? key, required this.menuNum}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
-
   @override
   Widget build(BuildContext context) {
     var mediaWidth = MediaQuery.of(context).size.width;
@@ -37,7 +35,7 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               children: [
                 Container(
-                  width: dynamicWidth(context, .15),
+                  width: dynamicWidth(context, .14),
                   height: dynamicHeight(context, 1),
                   color: myGreyLight,
                   child: const SideBar(),
@@ -54,7 +52,6 @@ class _HomePageState extends State<HomePage> {
                           backgroundColor: myGreyDark,
                           bottom: TabBar(
                             onTap: (index) {
-                              // Tab index when user select it, it start from zero
                               print(index);
                             },
                             isScrollable: true,
@@ -96,10 +93,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Container(
-                  width: dynamicWidth(context, .15),
+                  width: dynamicWidth(context, .16),
                   height: dynamicHeight(context, 1),
                   color: myGreyLight,
-                  child: Center(child: const Text("3")),
+                  child: const Center(child: Text("3")),
                 ),
               ],
             ),
