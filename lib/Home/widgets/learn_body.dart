@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:onli_studio/provider/my_provider.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
+import 'package:onli_studio/widgets/chew_player.dart';
 import 'package:onli_studio/widgets/text_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +17,7 @@ class LearnBody extends StatefulWidget {
 
 class _LearnBodyState extends State<LearnBody> {
   late MyProvider _myProvider;
-
+  bool video = false;
   @override
   void initState() {
     super.initState();
@@ -26,7 +27,6 @@ class _LearnBodyState extends State<LearnBody> {
   Widget build(BuildContext context) {
     _myProvider = Provider.of<MyProvider>(context, listen: false);
     int menu = Provider.of<MyProvider>(context, listen: false).selectedMenu;
-    print('menu: $menu');
     return Container(
       height: dynamicHeight(context, 1),
       width: dynamicWidth(context, 1),
@@ -38,150 +38,229 @@ class _LearnBodyState extends State<LearnBody> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: dynamicWidth(context, 0.03),
-                vertical: dynamicHeight(context, 0.04),
-              ),
-              height: dynamicHeight(context, .43),
-              width: dynamicWidth(context, 1),
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    "assets/blackbg.png",
-                  ),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      text(context, "10 Articles", .01, myLightGreyText),
-                    ],
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        alignment: Alignment.topLeft,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              getTitle(),
-                              style: TextStyle(
-                                color: myWhite,
-                                fontSize: dynamicWidth(context, 0.015),
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                            Text(
-                              getSubTitle(),
-                              style: TextStyle(
-                                color: myLightGreyText,
-                                fontSize: dynamicWidth(context, 0.01),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: dynamicWidth(context, 0.24),
-                        alignment: Alignment.topLeft,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              getDec(),
-                              style: TextStyle(
-                                color: Color(0xffF2FAF0),
-                                fontSize: dynamicWidth(context, 0.01),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            // 2nd Coantianer
-            Container(
-              height: dynamicHeight(context, .25),
-              width: dynamicWidth(context, 1),
-              color: Color(0xffD8D8D8),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: dynamicWidth(context, 0.02),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            video == true
+                ? MyVideoPlayer(path: 'assets/flower.mp4')
+                :
+                // 1st Container
+                Container(
+                    child: Column(
                       children: [
                         Container(
                           padding: EdgeInsets.symmetric(
-                            // horizontal: dynamicWidth(context, 0.03),
+                            horizontal: dynamicWidth(context, 0.03),
                             vertical: dynamicHeight(context, 0.04),
                           ),
-                          width: dynamicWidth(context, 0.15),
+                          height: dynamicHeight(context, .43),
+                          width: dynamicWidth(context, 1),
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                                "assets/blackbg.png",
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              text(
-                                context,
-                                "Pinned Article & Featured",
-                                0.01,
-                                Color(0xff333333),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  text(context, "10 Articles", .01,
+                                      myLightGreyText),
+                                ],
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.topLeft,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          getTitle(),
+                                          style: TextStyle(
+                                            color: myWhite,
+                                            fontSize:
+                                                dynamicWidth(context, 0.015),
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                        Text(
+                                          getSubTitle(),
+                                          style: TextStyle(
+                                            color: myLightGreyText,
+                                            fontSize:
+                                                dynamicWidth(context, 0.01),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: dynamicWidth(context, 0.24),
+                                    alignment: Alignment.topLeft,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          getDec(),
+                                          style: TextStyle(
+                                            color: Color(0xffF2FAF0),
+                                            fontSize:
+                                                dynamicWidth(context, 0.01),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        // 2nd Coantianer
+                        Container(
+                          height: dynamicHeight(context, .25),
+                          width: dynamicWidth(context, 1),
+                          color: Color(0xffD8D8D8),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: dynamicWidth(context, 0.02),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        // horizontal: dynamicWidth(context, 0.03),
+                                        vertical: dynamicHeight(context, 0.04),
+                                      ),
+                                      width: dynamicWidth(context, 0.15),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          text(
+                                            context,
+                                            "Pinned Article & Featured",
+                                            0.01,
+                                            Color(0xff333333),
+                                          ),
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          text(
+                                            context,
+                                            "Author Dhryl Anton, Peter Haxel, Michael McFall",
+                                            0.007,
+                                            Color(0xffA9A9A9),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: dynamicWidth(context, 0.2),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          text(
+                                            context,
+                                            "Onli is a protocol. A protocol, in computer science, is a set of rules or procedures that governs the transfer of data between two or more electronic devices. A protocol establishes how the information must be structured and how each party is going to store it, send it and receive it.",
+                                            0.006,
+                                            Color(0xff333333),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: dynamicWidth(context, 0.16),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          text(
+                                            context,
+                                            "Onli is a protocol. A protocol, in computer science, is a set of rules or procedures that governs the transfer of data between two or more electronic devices. A protocol establishes how the information must be structured and how each party is going to store it, send it and receive it.",
+                                            0.006,
+                                            Color(0xff333333),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Column(
+                                children: [
+                                  Divider(
+                                    thickness: 1.5,
+                                    color: Color(0xffCCCCCC),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 15,
+                                          ),
+                                          Icon(
+                                            Icons.menu,
+                                            size: dynamicWidth(context, 0.015),
+                                          ),
+                                          SizedBox(
+                                            width: 15,
+                                          ),
+                                          Container(
+                                            width: 2,
+                                            color: Color(0xffCCCCCC),
+                                            child: Text(""),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          text(context, "Download WhitePaper",
+                                              0.006, Color(0xff757171)),
+                                          SizedBox(
+                                            width: 15,
+                                          ),
+                                          Icon(
+                                            Icons.file_download_outlined,
+                                            size: dynamicWidth(context, 0.015),
+                                          ),
+                                          SizedBox(
+                                            width: 15,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
                               SizedBox(
                                 height: 5,
-                              ),
-                              text(
-                                context,
-                                "Author Dhryl Anton, Peter Haxel, Michael McFall",
-                                0.007,
-                                Color(0xffA9A9A9),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: dynamicWidth(context, 0.2),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              text(
-                                context,
-                                "Onli is a protocol. A protocol, in computer science, is a set of rules or procedures that governs the transfer of data between two or more electronic devices. A protocol establishes how the information must be structured and how each party is going to store it, send it and receive it.",
-                                0.006,
-                                Color(0xff333333),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: dynamicWidth(context, 0.16),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              text(
-                                context,
-                                "Onli is a protocol. A protocol, in computer science, is a set of rules or procedures that governs the transfer of data between two or more electronic devices. A protocol establishes how the information must be structured and how each party is going to store it, send it and receive it.",
-                                0.006,
-                                Color(0xff333333),
                               ),
                             ],
                           ),
@@ -189,60 +268,7 @@ class _LearnBodyState extends State<LearnBody> {
                       ],
                     ),
                   ),
-                  Column(
-                    children: [
-                      Divider(
-                        thickness: 1.5,
-                        color: Color(0xffCCCCCC),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SizedBox(
-                                width: 15,
-                              ),
-                              Icon(
-                                Icons.menu,
-                                size: dynamicWidth(context, 0.015),
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              Container(
-                                width: 2,
-                                color: Color(0xffCCCCCC),
-                                child: Text(""),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              text(context, "Download WhitePaper", 0.006,
-                                  Color(0xff757171)),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              Icon(
-                                Icons.file_download_outlined,
-                                size: dynamicWidth(context, 0.015),
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                ],
-              ),
-            ),
+
             // Last list view
             SizedBox(
               height: 10,
@@ -314,74 +340,82 @@ class _LearnBodyState extends State<LearnBody> {
   }
 
   Widget thirdSlider(context, image, title) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: dynamicWidth(context, .002),
-      ),
-      child: SizedBox(
-        height: dynamicHeight(context, 0.2),
-        width: dynamicWidth(context, .18),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox(
-              height: dynamicHeight(context, 0.12),
-              width: dynamicWidth(context, .23),
-              child: Image.asset(
-                image,
-                fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _myProvider.videoPlaying(true);
+          video = true;
+        });
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: dynamicWidth(context, .002),
+        ),
+        child: SizedBox(
+          height: dynamicHeight(context, 0.2),
+          width: dynamicWidth(context, .18),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                height: dynamicHeight(context, 0.12),
+                width: dynamicWidth(context, .23),
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            Spacer(),
-            Row(
-              children: [
-                text(
-                  context,
-                  title,
-                  .008,
-                  Color(0xff6F6F6F),
-                  boldText: FontWeight.w600,
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                text(
-                  context,
-                  "Author Name",
-                  .008,
-                  Color(0xff313131),
-                  boldText: FontWeight.w600,
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.star,
-                  color: myWhite,
-                  size: dynamicWidth(context, .006),
-                ),
-                Icon(
-                  Icons.star,
-                  color: myWhite,
-                  size: dynamicWidth(context, .006),
-                ),
-                Icon(
-                  Icons.star,
-                  color: myWhite,
-                  size: dynamicWidth(context, .006),
-                ),
-                Icon(
-                  Icons.star,
-                  color: myWhite,
-                  size: dynamicWidth(context, .006),
-                ),
-                widthBox(context, .01),
-                text(context, "(23)", .006, Color(0xff313131))
-              ],
-            ),
-          ],
+              Spacer(),
+              Row(
+                children: [
+                  text(
+                    context,
+                    title,
+                    .008,
+                    Color(0xff6F6F6F),
+                    boldText: FontWeight.w600,
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  text(
+                    context,
+                    "Author Name",
+                    .008,
+                    Color(0xff313131),
+                    boldText: FontWeight.w600,
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: myWhite,
+                    size: dynamicWidth(context, .006),
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: myWhite,
+                    size: dynamicWidth(context, .006),
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: myWhite,
+                    size: dynamicWidth(context, .006),
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: myWhite,
+                    size: dynamicWidth(context, .006),
+                  ),
+                  widthBox(context, .01),
+                  text(context, "(23)", .006, Color(0xff313131))
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -8,9 +8,15 @@ class MyProvider extends ChangeNotifier {
   }
 
   int selectedMenu = 0;
+  bool playVideo = false;
 
   void selectMenu(int num) {
     selectedMenu = num;
+    notifyListeners();
+  }
+
+    void videoPlaying(bool val) {
+    playVideo = val;
     notifyListeners();
   }
 }
