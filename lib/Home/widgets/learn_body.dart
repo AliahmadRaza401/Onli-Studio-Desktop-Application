@@ -22,22 +22,6 @@ class _LearnBodyState extends State<LearnBody> {
     super.initState();
   }
 
-  getTitle() {
-    if (_myProvider.selectedMenu == 0 || _myProvider.selectedMenu == 1) {
-      return "The Onli Protocol";
-    } else if (_myProvider.selectedMenu == 2) {
-      return "Onli ID";
-    } else if (_myProvider.selectedMenu == 3) {
-      return "Onli Build";
-    } else if (_myProvider.selectedMenu == 4) {
-      return "The Onli Cloud";
-    } else if (_myProvider.selectedMenu == 5) {
-      return "The Onli One Network";
-    } else {
-      return "The Onli Protocol";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     _myProvider = Provider.of<MyProvider>(context, listen: false);
@@ -100,7 +84,7 @@ class _LearnBodyState extends State<LearnBody> {
                                 ),
                               ),
                               Text(
-                                "The Fabric of Innovation",
+                                getSubTitle(),
                                 style: TextStyle(
                                   color: myLightGreyText,
                                   fontSize: dynamicWidth(context, 0.01),
@@ -117,7 +101,7 @@ class _LearnBodyState extends State<LearnBody> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Onli is a patented protocol that governs how data is going to be stored, how it is going to be transferred, and how it is going to change or evolve when it moves.",
+                                getDec(),
                                 style: TextStyle(
                                   color: Color(0xffF2FAF0),
                                   fontSize: dynamicWidth(context, 0.01),
@@ -411,5 +395,53 @@ class _LearnBodyState extends State<LearnBody> {
         ),
       ),
     );
+  }
+
+  getTitle() {
+    if (_myProvider.selectedMenu == 0 || _myProvider.selectedMenu == 1) {
+      return "The Onli Protocol";
+    } else if (_myProvider.selectedMenu == 2) {
+      return "Onli ID";
+    } else if (_myProvider.selectedMenu == 3) {
+      return "Onli Build";
+    } else if (_myProvider.selectedMenu == 4) {
+      return "The Onli Cloud";
+    } else if (_myProvider.selectedMenu == 5) {
+      return "The Onli One Network";
+    } else {
+      return "The Onli Protocol";
+    }
+  }
+
+  getSubTitle() {
+    if (_myProvider.selectedMenu == 0 || _myProvider.selectedMenu == 1) {
+      return "The Fabric of Innovation";
+    } else if (_myProvider.selectedMenu == 2) {
+      return "Password Free Authenticator";
+    } else if (_myProvider.selectedMenu == 3) {
+      return "Make Ideas Happen";
+    } else if (_myProvider.selectedMenu == 4) {
+      return "The Cloud For Innovation";
+    } else if (_myProvider.selectedMenu == 5) {
+      return "There can be Onli One";
+    } else {
+      return "The Fabric of Innovation";
+    }
+  }
+
+  getDec() {
+    if (_myProvider.selectedMenu == 0 || _myProvider.selectedMenu == 1) {
+      return "Onli is a patented protocol that governs how data is going to be stored, how it is going to be transferred, and how it is going to change or evolve when it moves.";
+    } else if (_myProvider.selectedMenu == 2) {
+      return "Onli ID is a authentication and authorization system. Onli ID is a personal blockchain that replaces the use for a password.";
+    } else if (_myProvider.selectedMenu == 3) {
+      return "Onli Build is a set of tools that make it easy to prototype and build your ideas quickly, to run on the Onli Cloud and Onli One Network.";
+    } else if (_myProvider.selectedMenu == 4) {
+      return "Onli Cloud is everything you need to deploy an Onli Appliance. An Appliance is an application that moves value around.";
+    } else if (_myProvider.selectedMenu == 5) {
+      return "The infrastructure on which the protocol runs is called the Onli One. It’s a private part of the internet. You access the computing resources of the Onli One, like compute, storage, network, marketplace, via the Onli Cloud.";
+    } else {
+      return "Onli is a patented protocol that governs how data is going to be stored, how it is going to be transferred, and how it is going to change or evolve when it moves.";
+    }
   }
 }
