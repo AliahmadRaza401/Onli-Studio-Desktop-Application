@@ -149,37 +149,6 @@ Widget thirdSlider(context, image, title, {check = false}) {
           ),
           Row(
             children: [
-              SizedBox(
-                height: dynamicHeight(context, 0.1),
-                width: dynamicWidth(context, .23),
-                child: Image.asset(
-                  image,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              const Spacer(),
-              Row(
-                children: [
-                  text(
-                    context,
-                    title,
-                    .008,
-                    const Color(0xff6F6F6F),
-                    boldText: FontWeight.w600,
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  text(
-                    context,
-                    "Author Name",
-                    .008,
-                    const Color(0xff313131),
-                    boldText: FontWeight.w600,
-                  ),
-                ],
-              ),
               Row(
                 children: [
                   Icon(
