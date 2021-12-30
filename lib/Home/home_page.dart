@@ -58,12 +58,12 @@ class _HomePageState extends State<HomePage> {
                             isScrollable: true,
                             unselectedLabelColor: myGreyText,
                             unselectedLabelStyle: TextStyle(
-                              fontSize: dynamicHeight(context, 0.02),
+                              fontSize: dynamicHeight(context, 0.016),
                               fontWeight: FontWeight.bold,
                             ),
                             labelColor: myWhite,
                             labelStyle: TextStyle(
-                              fontSize: dynamicHeight(context, 0.02),
+                              fontSize: dynamicHeight(context, 0.016),
                               fontWeight: FontWeight.bold,
                             ),
                             indicatorColor: noColor,

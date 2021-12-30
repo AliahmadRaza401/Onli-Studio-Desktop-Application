@@ -105,53 +105,59 @@ Widget secondSlider(context, image, headingColor, subHeadingColor) {
   );
 }
 
-class thirdSlider extends StatefulWidget {
-  var image;
-  var title;
-  thirdSlider({this.image, this.title});
-
-  @override
-  _thirdSliderState createState() => _thirdSliderState();
-}
-
-class _thirdSliderState extends State<thirdSlider> {
-  late MyProvider _myProvider;
-
-  @override
-  void initState() {
-    super.initState();
-    _myProvider = Provider.of<MyProvider>(context, listen: false);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        // setState(() {
-        //   _myProvider.videoPlaying(true);
-        // });
-        // Navigator.of(context).push(
-        //   MaterialPageRoute(
-        //     builder: (context) => const HomePage(
-        //       menuNum: 1,
-        //     ),
-        //   ),
-        // );
-      },
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: dynamicWidth(context, .002),
-        ),
-        child: SizedBox(
-          width: dynamicWidth(context, .18),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+Widget thirdSlider(context, image, title, {check = false}) {
+  return Padding(
+    padding: EdgeInsets.symmetric(
+      horizontal: dynamicWidth(context, .002),
+    ),
+    child: SizedBox(
+      height: check == true
+          ? dynamicHeight(context, .14)
+          : dynamicHeight(context, .17),
+      width: dynamicWidth(context, .18),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(
+            height: check == true
+                ? dynamicHeight(context, .08)
+                : dynamicHeight(context, .1),
+            width: dynamicWidth(context, .23),
+            child: Image.asset(
+              image,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const Spacer(),
+          Row(
+            children: [
+              text(
+                context,
+                title,
+                .008,
+                const Color(0xff6F6F6F),
+                boldText: FontWeight.w600,
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              text(
+                context,
+                "Author Name",
+                .008,
+                const Color(0xff313131),
+                boldText: FontWeight.w600,
+              ),
+            ],
+          ),
+          Row(
             children: [
               SizedBox(
                 height: dynamicHeight(context, 0.1),
                 width: dynamicWidth(context, .23),
                 child: Image.asset(
-                  widget.image,
+                  image,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -160,7 +166,7 @@ class _thirdSliderState extends State<thirdSlider> {
                 children: [
                   text(
                     context,
-                    widget.title,
+                    title,
                     .008,
                     const Color(0xff6F6F6F),
                     boldText: FontWeight.w600,
@@ -206,11 +212,12 @@ class _thirdSliderState extends State<thirdSlider> {
               ),
             ],
           ),
+          ],
         ),
       ),
     );
   }
-}
+
 
 // Widget thirdSlider(context, image, title) {
 //   return GestureDetector(

@@ -114,37 +114,43 @@ class DiscoverBody extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: [
                   thirdSlider(
-                    image: "assets/OExperience.001.png",
-                    title: "About Onli",
+                    context,
+                    "assets/OExperience.png",
+                    "About Onli",
                   ),
                   thirdSlider(
-                    image: "assets/building.png",
-                    title: "Onli ID",
+                    context,
+                    "assets/building.png",
+                    "Onli ID",
                   ),
                   thirdSlider(
-                    image: "assets/OExperience.001.png",
-                    title: "Tutorial",
+                    context,
+                    "assets/OExperience.001.png",
+                    "Tutorial",
                   ),
                   thirdSlider(
-                    image: "assets/mianScrl2.png",
-                    title: "Presentation",
+                    context,
+                    "assets/mianScrl2.png",
+                    "Presentation",
                   ),
                   thirdSlider(
-                    image: "assets/miniScrl1.png",
-                    title: "Blog",
+                    context,
+                    "assets/miniScrl1.png",
+                    "Blog",
                   ),
                   thirdSlider(
-                    image: "assets/nli.png",
-                    title: "Onli Build",
+                    context,
+                    "assets/nli.png",
+                    "Onli Build",
                   ),
                   thirdSlider(
-                    image: "assets/OExperience.001.png",
-                    title: "Onli Build",
+                    context,
+                    "assets/OExperience.001.png",
+                    "Onli Build",
                   ),
                 ],
               ),
             ),
-
             // 4th Slider
 
             heightBox(context, .021),
