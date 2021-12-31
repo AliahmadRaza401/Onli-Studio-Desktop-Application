@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: multiProviders,
       child: MaterialApp(
-        title: 'Onli Studio',
+        title: 'Onli',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.grey,

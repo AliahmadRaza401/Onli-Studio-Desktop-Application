@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:onli_studio/Home/home_page.dart';
+import 'package:onli_studio/utils/app_routes.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 import 'package:onli_studio/widgets/text_widget.dart';
 
 class AppDownload extends StatelessWidget {
+  const AppDownload({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         width: dynamicWidth(context, 1),
         height: dynamicHeight(context, 1),
-        color: Color(0xFF181818),
+        color: const Color(0xFF181818),
         child: Center(
           child: Container(
             width: dynamicWidth(context, 0.5),
@@ -28,9 +32,8 @@ class AppDownload extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Container(
+                    SizedBox(
                       width: dynamicWidth(context, 0.3),
-                      // color: Colors.green,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,9 +62,9 @@ class AppDownload extends StatelessWidget {
                             width: dynamicWidth(context, 0.16),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(40),
-                              color: Color(0xff6D6D6D),
+                              color: const Color(0xff6D6D6D),
                             ),
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                               left: 20,
                             ),
                             child: Row(
@@ -75,7 +78,7 @@ class AppDownload extends StatelessWidget {
                                         color: Colors.white,
                                         size: dynamicWidth(context, 0.01),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 5,
                                       ),
                                       text(
@@ -88,9 +91,17 @@ class AppDownload extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                Image.asset(
-                                  'assets/Submit.png',
-                                  height: dynamicHeight(context, 0.06),
+                                GestureDetector(
+                                  onTap: () {
+                                    push(
+                                      context,
+                                      const HomePage(menuNum: 0),
+                                    );
+                                  },
+                                  child: Image.asset(
+                                    'assets/Submit.png',
+                                    height: dynamicHeight(context, 0.06),
+                                  ),
                                 ),
                               ],
                             ),
