@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:onli_studio/Home/widgets/build_body.dart';
-import 'package:onli_studio/Home/widgets/build_sidebar.dart';
-import 'package:onli_studio/Home/widgets/discover_body.dart';
-import 'package:onli_studio/Home/widgets/learn_body.dart';
-import 'package:onli_studio/Home/widgets/left_sidebar.dart';
-import 'package:onli_studio/Home/widgets/pricing_body.dart';
-import 'package:onli_studio/Home/widgets/pricing_sidebar.dart';
-import 'package:onli_studio/Home/widgets/resources_body.dart';
-import 'package:onli_studio/Home/widgets/right_sidebar.dart';
+import 'package:onli_studio/Home/tabs/build_body.dart';
+import 'package:onli_studio/sidebar/build_sidebar.dart';
+import 'package:onli_studio/Home/tabs/discover_body.dart';
+import 'package:onli_studio/Home/tabs/learn_body.dart';
+import 'package:onli_studio/sidebar/left_sidebar.dart';
+import 'package:onli_studio/Home/tabs/pricing_body.dart';
+import 'package:onli_studio/sidebar/pricing_sidebar.dart';
+import 'package:onli_studio/Home/tabs/resources_body.dart';
+import 'package:onli_studio/sidebar/right_sidebar.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 

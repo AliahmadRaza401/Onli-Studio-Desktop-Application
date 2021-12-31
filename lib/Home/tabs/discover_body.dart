@@ -3,7 +3,7 @@ import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 import 'package:onli_studio/widgets/text_widget.dart';
 
-import 'discover_widgets.dart';
+import '../widgets/discover_widgets.dart';
 
 class DiscoverBody extends StatelessWidget {
   const DiscoverBody({Key? key}) : super(key: key);

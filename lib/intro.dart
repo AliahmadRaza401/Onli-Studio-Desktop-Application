@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:onli_studio/app_download.dart';
+import 'package:onli_studio/app_download/app_download.dart';
 import 'package:onli_studio/utils/app_routes.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';

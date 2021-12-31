@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onli_studio/Home/widgets/right_tab_search.dart';
-import 'package:onli_studio/Home/widgets/right_tab_settings.dart';
+import 'package:onli_studio/sidebar/right_tab_search.dart';
+import 'package:onli_studio/sidebar/right_tab_settings.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 

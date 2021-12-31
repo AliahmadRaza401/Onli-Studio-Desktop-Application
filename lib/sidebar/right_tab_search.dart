@@ -4,7 +4,7 @@ import 'package:onli_studio/utils/dynamic_sizes.dart';
 import 'package:onli_studio/widgets/form_fields.dart';
 import 'package:onli_studio/widgets/text_widget.dart';
 
-import 'discover_widgets.dart';
+import '../Home/widgets/discover_widgets.dart';
 
 class RightTabSearch extends StatefulWidget {
   const RightTabSearch({Key? key}) : super(key: key);
