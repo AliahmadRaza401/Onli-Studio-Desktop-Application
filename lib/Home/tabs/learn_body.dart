@@ -41,7 +41,7 @@ class _LearnBodyState extends State<LearnBody> {
             video == true
                 ? MyVideoPlayer(path: 'assets/flower.mp4')
                 :
-                // 1st Container
+                // 1st Cont
                 Container(
                     child: Column(
                       children: [
