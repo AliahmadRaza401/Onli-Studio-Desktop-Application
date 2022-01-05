@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 import 'package:onli_studio/widgets/text_widget.dart';
 
+import '../login.dart';
+
 class PricingSideBar extends StatefulWidget {
   const PricingSideBar({Key? key}) : super(key: key);
 
@@ -30,12 +32,18 @@ class _PricingSideBarState extends State<PricingSideBar> {
                   Color(0xff707070),
                   fontFamily: 'OpenSans',
                 ),
-                text(
-                  context,
-                  "LogOut",
-                  0.008,
-                  Color(0xff707070),
-                  fontFamily: 'HelveticaNeue_Thin',
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => Login()));
+                  },
+                  child: text(
+                    context,
+                    "LogOut",
+                    0.008,
+                    Color(0xff707070),
+                    fontFamily: 'HelveticaNeue_Thin',
+                  ),
                 ),
               ],
             ),

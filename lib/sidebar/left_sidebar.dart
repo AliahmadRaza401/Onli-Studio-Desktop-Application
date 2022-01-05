@@ -21,6 +21,12 @@ class _LeftSideBarState extends State<LeftSideBar> {
     _myProvider = Provider.of<MyProvider>(context, listen: false);
   }
 
+  bool c1 = false;
+  bool c2 = false;
+  bool c3 = false;
+  bool c4 = false;
+  bool c5 = false;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -62,7 +68,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
                       ),
                     );
                   },
-                  child: heading(context, "Onli", "")),
+                  child: heading(context, "Onli", "", () {})),
               InkWell(
                   onTap: () {
                     setState(() {
@@ -76,7 +82,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
                       ),
                     );
                   },
-                  child: heading(context, "Onli iD", "")),
+                  child: heading(context, "Onli iD", "", () {})),
               InkWell(
                   onTap: () {
                     setState(() {
@@ -90,7 +96,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
                       ),
                     );
                   },
-                  child: heading(context, "Onli Build", "")),
+                  child: heading(context, "Onli Build", "", () {})),
               InkWell(
                   onTap: () {
                     setState(() {
@@ -104,7 +110,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
                       ),
                     );
                   },
-                  child: heading(context, "Onli Cloud", "")),
+                  child: heading(context, "Onli Cloud", "", () {})),
               GestureDetector(
                   onTap: () {
                     setState(() {
@@ -118,7 +124,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
                       ),
                     );
                   },
-                  child: heading(context, "Onli One", "")),
+                  child: heading(context, "Onli One", "", () {})),
               Container(
                 margin: EdgeInsets.symmetric(
                   horizontal: dynamicWidth(context, .01),
@@ -131,15 +137,71 @@ class _LeftSideBarState extends State<LeftSideBar> {
               const SizedBox(
                 height: 10,
               ),
-              heading(context, "Collections", ""),
+              heading(context, "Collections", "", () {}),
               const SizedBox(
                 height: 10,
               ),
-              heading(context, "Protocol Containers", "(13)"),
-              heading(context, "Infrastructure", "(20)"),
-              heading(context, "Platform", "(20)"),
-              heading(context, "Tolls", "(20)"),
-              heading(context, "Cloud OS", "(20)"),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    c1 = !c1;
+                  });
+                },
+                child: headingSelect(
+                  context,
+                  "Protocol Containers",
+                  "(13)",
+                  c1,
+                ),
+              ),
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      c2 = !c2;
+                    });
+                  },
+                  child: headingSelect(
+                    context,
+                    "Infrastructure",
+                    "(20)",
+                    c2,
+                  )),
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      c3 = !c3;
+                    });
+                  },
+                  child: headingSelect(
+                    context,
+                    "Platform",
+                    "(20)",
+                    c3,
+                  )),
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      c4 = !c4;
+                    });
+                  },
+                  child: headingSelect(
+                    context,
+                    "Tolls",
+                    "(20)",
+                    c4,
+                  )),
+              GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      c5 = !c5;
+                    });
+                  },
+                  child: headingSelect(
+                    context,
+                    "Cloud OS",
+                    "(20)",
+                    c5,
+                  )),
             ],
           ),
           Container(
@@ -172,32 +234,104 @@ class _LeftSideBarState extends State<LeftSideBar> {
     );
   }
 
-  Widget heading(BuildContext context, title, no) {
-    return Container(
-      margin: EdgeInsets.symmetric(
-        horizontal: dynamicHeight(context, .03),
-        vertical: dynamicHeight(context, .02),
+  Widget headingSelect(
+    BuildContext context,
+    title,
+    no,
+    bool,
+  ) {
+    return GestureDetector(
+      child: Container(
+        color: bool == true ? Color(0xff2e2e2e) : Color(0xff222222),
+        margin: EdgeInsets.symmetric(
+          vertical: dynamicHeight(context, .001),
+        ),
+        alignment: Alignment.topLeft,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(
+                // horizontal: dynamicHeight(context, .03),
+                vertical: dynamicHeight(context, .02),
+              ),
+              margin: EdgeInsets.symmetric(
+                horizontal: dynamicHeight(context, .01),
+              ),
+              child: Row(
+                children: [
+                  bool == true
+                      ? Icon(
+                          Icons.arrow_right_rounded,
+                          color: myWhite,
+                          size: dynamicHeight(context, 0.03),
+                        )
+                      : SizedBox(
+                          width: dynamicHeight(context, 0.03),
+                        ),
+                  Text(
+                    title,
+                    style: TextStyle(
+                      color: myWhite,
+                      fontSize: dynamicHeight(context, .015),
+                      fontFamily: 'DMSans',
+                    ),
+                  ),
+                  Text(
+                    no,
+                    style: TextStyle(
+                      color: myWhite,
+                      fontSize: dynamicHeight(context, .015),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            bool == true
+                ? Container(
+                    height: dynamicHeight(context, .05),
+                    width: dynamicHeight(context, .005),
+                    color: Color(0xff2cb56e),
+                    child: Text(""),
+                  )
+                : SizedBox(
+                    width: 5,
+                  ),
+          ],
+        ),
       ),
-      alignment: Alignment.topLeft,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: TextStyle(
-              color: myWhite,
-              fontSize: dynamicHeight(context, .015),
-              fontFamily: 'DMSans',
+    );
+  }
+
+  Widget heading(BuildContext context, title, no, Function onTap) {
+    return GestureDetector(
+      onTap: onTap(),
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: dynamicHeight(context, .03),
+          vertical: dynamicHeight(context, .02),
+        ),
+        alignment: Alignment.topLeft,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                color: myWhite,
+                fontSize: dynamicHeight(context, .015),
+                fontFamily: 'DMSans',
+              ),
             ),
-          ),
-          Text(
-            no,
-            style: TextStyle(
-              color: myWhite,
-              fontSize: dynamicHeight(context, .015),
+            Text(
+              no,
+              style: TextStyle(
+                color: myWhite,
+                fontSize: dynamicHeight(context, .015),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

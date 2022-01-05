@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onli_studio/login.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 import 'package:onli_studio/widgets/text_widget.dart';
@@ -37,12 +38,17 @@ class _BuildSideBarState extends State<BuildSideBar> {
                       const Color(0xff6D6D6D),
                       fontFamily: 'OpenSans',
                     ),
-                    text(
-                      context,
-                      "Logout",
-                      .008,
-                      const Color(0xff6D6D6D),
-                      fontFamily: 'HelveticaNeue_Thin',
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => Login()));
+                      },
+                      child: text(
+                        context,
+                        "Logout",
+                        .008,
+                        const Color(0xff6D6D6D),
+                        fontFamily: 'HelveticaNeue_Thin',
+                      ),
                     ),
                   ],
                 ),
