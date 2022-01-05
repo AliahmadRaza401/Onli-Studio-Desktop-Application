@@ -5,7 +5,9 @@ import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 
 class RightSideBar extends StatefulWidget {
-  const RightSideBar({Key? key}) : super(key: key);
+  final bool check;
+
+  const RightSideBar({Key? key, required this.check}) : super(key: key);
 
   @override
   _RightSideBarState createState() => _RightSideBarState();
@@ -22,36 +24,42 @@ class _RightSideBarState extends State<RightSideBar> {
           preferredSize: Size.fromHeight(
             dynamicHeight(context, .08),
           ),
-          child: AppBar(
-            backgroundColor: myGreyDark,
-            toolbarHeight: dynamicHeight(context, .1),
-            elevation: 0.0,
-            bottom: TabBar(
-              onTap: (index) {
-                print(index);
-              },
-              isScrollable: true,
-              unselectedLabelColor: myGreyText,
-              unselectedLabelStyle: TextStyle(
-                fontSize: dynamicHeight(context, 0.016),
-                fontWeight: FontWeight.bold,
-              ),
-              labelColor: myWhite,
-              labelStyle: TextStyle(
-                fontSize: dynamicHeight(context, 0.016),
-                fontWeight: FontWeight.bold,
-                 fontFamily: 'DMSans',
-              ),
-              indicatorColor: noColor,
-              tabs: const [
-                Tab(text: "Search"),
-                Tab(text: "My Settings"),
-              ],
+          child: Theme(
+            data: ThemeData(
+              highlightColor: noColor,
+              splashColor: noColor,
             ),
-            automaticallyImplyLeading: false,
+            child: AppBar(
+              backgroundColor: myGreyDark,
+              toolbarHeight: dynamicHeight(context, .1),
+              elevation: 0.0,
+              bottom: TabBar(
+                onTap: (index) {
+                },
+                isScrollable: true,
+                unselectedLabelColor: myGreyText,
+                unselectedLabelStyle: TextStyle(
+                  fontSize: dynamicWidth(context, 0.007),
+                  fontWeight: FontWeight.bold,
+                ),
+                labelColor: myWhite,
+                labelStyle: TextStyle(
+                  fontSize: dynamicWidth(context, 0.007),
+                  fontWeight: FontWeight.bold,
+                    fontFamily: 'DMSans',
+                ),
+                indicatorColor: noColor,
+                tabs: [
+                  const Tab(text: "Search"),
+                  Tab(text: widget.check == false ? "My Settings" : "Author"),
+                ],
+              ),
+              automaticallyImplyLeading: false,
+            ),
           ),
         ),
         body: const TabBarView(
+          physics: NeverScrollableScrollPhysics(),
           children: [
             RightTabSearch(),
             RightTabSettings(),

@@ -44,6 +44,7 @@ class AppDownload extends StatelessWidget {
                             0.02,
                             Colors.white,
                             boldText: FontWeight.w800,
+                            fontFamily: 'Poppins',
                           ),
                           SizedBox(
                             height: dynamicHeight(context, 0.01),
@@ -54,6 +55,7 @@ class AppDownload extends StatelessWidget {
                             0.006,
                             Colors.white,
                             boldText: FontWeight.w800,
+                            fontFamily: 'Poppins',
                           ),
                           Container(
                             margin: EdgeInsets.symmetric(
@@ -87,6 +89,7 @@ class AppDownload extends StatelessWidget {
                                         0.007,
                                         Colors.white,
                                         boldText: FontWeight.w700,
+                                        fontFamily: 'Poppins',
                                       ),
                                     ],
                                   ),
@@ -111,6 +114,7 @@ class AppDownload extends StatelessWidget {
                             "* We don’t spam customers. Check our Privacy Policy",
                             0.005,
                             Colors.white,
+                            fontFamily: 'Poppins',
                           ),
                         ],
                       ),
