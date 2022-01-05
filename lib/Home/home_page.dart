@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:onli_studio/Home/tabs/build_body.dart';
-import 'package:onli_studio/sidebar/build_sidebar.dart';
 import 'package:onli_studio/Home/tabs/discover_body.dart';
 import 'package:onli_studio/Home/tabs/learn_body.dart';
-import 'package:onli_studio/sidebar/left_sidebar.dart';
 import 'package:onli_studio/Home/tabs/pricing_body.dart';
-import 'package:onli_studio/sidebar/pricing_sidebar.dart';
 import 'package:onli_studio/Home/tabs/resources_body.dart';
+import 'package:onli_studio/sidebar/build_sidebar.dart';
+import 'package:onli_studio/sidebar/left_sidebar.dart';
+import 'package:onli_studio/sidebar/pricing_sidebar.dart';
 import 'package:onli_studio/sidebar/right_sidebar.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
@@ -48,45 +48,56 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   width: dynamicWidth(context, .7),
                   height: dynamicHeight(context, 1),
-                  color: myBlack,
+                  color: myGreyDark,
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: dynamicHeight(context, .08),
-                        child: AppBar(
-                          backgroundColor: myGreyDark,
-                          bottom: TabBar(
-                            onTap: (index) {
-                              setState(() {
-                                tabBarIndex = index;
-                              });
-                            },
-                            isScrollable: true,
-                            unselectedLabelColor: myGreyText,
-                            unselectedLabelStyle: TextStyle(
-                              fontSize: dynamicHeight(context, 0.016),
-                              fontWeight: FontWeight.bold,
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: SizedBox(
+                          width: dynamicWidth(context, .4),
+                          height: dynamicHeight(context, .08),
+                          child: Theme(
+                            data: ThemeData(
+                              highlightColor: noColor,
+                              splashColor: noColor,
                             ),
-                            labelColor: myWhite,
-                            labelStyle: TextStyle(
-                              fontSize: dynamicHeight(context, 0.016),
-                              fontWeight: FontWeight.bold,
+                            child: AppBar(
+                              backgroundColor: myGreyDark,
+                              bottom: TabBar(
+                                onTap: (index) {
+                                  setState(() {
+                                    tabBarIndex = index;
+                                  });
+                                },
+                                isScrollable: true,
+                                unselectedLabelColor: myGreyText,
+                                unselectedLabelStyle: TextStyle(
+                                  fontSize: dynamicWidth(context, 0.0074),
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                labelColor: myWhite,
+                                labelStyle: TextStyle(
+                                  fontSize: dynamicWidth(context, 0.0074),
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                indicatorColor: noColor,
+                                tabs: const [
+                                  Tab(text: "Discover"),
+                                  Tab(text: "Learn"),
+                                  Tab(text: "Build"),
+                                  Tab(text: "Pricing"),
+                                  Tab(text: "Resources"),
+                                ],
+                              ),
+                              automaticallyImplyLeading: false,
                             ),
-                            indicatorColor: noColor,
-                            tabs: const [
-                              Tab(text: "Discover"),
-                              Tab(text: "Learn"),
-                              Tab(text: "Build"),
-                              Tab(text: "Pricing"),
-                              Tab(text: "Resources"),
-                            ],
                           ),
-                          automaticallyImplyLeading: false,
                         ),
                       ),
                       // TopBar(),
                       const Expanded(
                         child: TabBarView(
+                          physics: NeverScrollableScrollPhysics(),
                           children: [
                             DiscoverBody(),
                             LearnBody(),
@@ -116,15 +127,21 @@ class _HomePageState extends State<HomePage> {
   _getSideBar(int page) {
     switch (page) {
       case 0:
-        return const RightSideBar();
+        return const RightSideBar(
+          check: false,
+        );
       case 1:
-        return const RightSideBar();
+        return const RightSideBar(
+          check: true,
+        );
       case 2:
         return const BuildSideBar();
       case 3:
         return const PricingSideBar();
       case 4:
-        return const RightSideBar();
+        return const RightSideBar(
+          check: true,
+        );
       default:
         return Column(
           mainAxisSize: MainAxisSize.min,

@@ -26,9 +26,19 @@ Widget inputTextField(context, label, myController,
       obscureText: password == true ? obscureText : false,
       cursorColor: myWhite,
       cursorWidth: 1.0,
+      onFieldSubmitted: prefix == false
+          ? (value) {
+              push(
+                context,
+                const HomePage(
+                  menuNum: 0,
+                ),
+              );
+            }
+          : (value) {},
       style: TextStyle(
         color: myWhite,
-        fontSize: dynamicWidth(context, .01),
+        fontSize: dynamicWidth(context, .008),
       ),
       decoration: InputDecoration(
         prefixIcon: prefix == false
@@ -41,7 +51,7 @@ Widget inputTextField(context, label, myController,
         suffixIcon: password == false
             ? null
             : SizedBox(
-                width: dynamicWidth(context, .03),
+                width: dynamicWidth(context, .04),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -73,7 +83,7 @@ Widget inputTextField(context, label, myController,
         hintText: prefix == true ? label : "",
         hintStyle: TextStyle(
           color: myGreyText,
-          fontSize: dynamicWidth(context, .009),
+          fontSize: dynamicWidth(context, .008),
         ),
         enabledBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: noColor),
@@ -87,7 +97,7 @@ Widget inputTextField(context, label, myController,
         contentPadding: EdgeInsets.only(
           right: dynamicWidth(context, .006),
           left: dynamicWidth(context, .006),
-          bottom: dynamicHeight(context, .032),
+          // bottom: dynamicHeight(context, .026),
         ),
       ),
     ),

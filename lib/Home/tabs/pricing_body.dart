@@ -11,6 +11,8 @@ List<String> typeList = <String>[
   'Solid',
 ];
 
+GlobalKey? _dropdownButtonKey;
+
 class PricingBody extends StatefulWidget {
   const PricingBody({Key? key}) : super(key: key);
 
@@ -375,6 +377,7 @@ Widget pricingCard(context, gColor1, gColor2, image, title, para1, para2,
                   ),
                   child: DropdownButtonHideUnderline(
                     child: DropdownButton<String>(
+                      key: _dropdownButtonKey,
                       // value: selectedType == ""
                       //     ? typeList[0]
                       //     : selectedType,
@@ -382,6 +385,9 @@ Widget pricingCard(context, gColor1, gColor2, image, title, para1, para2,
                       elevation: 9,
                       dropdownColor: const Color(0xff1B1B1B),
                       isExpanded: true,
+                      onTap: (){
+                        print("object");
+                      },
                       onChanged: (String? value) async {
                         // setState(
                         //       () {

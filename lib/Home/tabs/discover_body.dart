@@ -36,7 +36,7 @@ class DiscoverBody extends StatelessWidget {
                   ),
                   mainSliderBox(
                     context,
-                    "assets/mianScrl3.png",
+                    "assets/mainScrl3.png",
                   ),
                 ],
               ),
