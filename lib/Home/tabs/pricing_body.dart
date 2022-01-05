@@ -327,157 +327,175 @@ class _PricingBodyState extends State<PricingBody> {
       ),
     );
   }
-}
 
-Widget pricingCard(context, gColor1, gColor2, image, title, para1, para2,
-    dropdownTitle, dropdownItems) {
-  return Padding(
-    padding: EdgeInsets.symmetric(
-      horizontal: dynamicWidth(context, .0046),
-    ),
-    child: Container(
-      width: dynamicWidth(context, .17),
-      decoration: BoxDecoration(
-        color: myWhite,
-        borderRadius: BorderRadius.circular(
+  bool price = false;
+
+  Widget pricingCard(context, gColor1, gColor2, image, title, para1, para2,
+      dropdownTitle, dropdownItems) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: dynamicWidth(context, .0046),
+      ),
+      child: Container(
+        width: dynamicWidth(context, .17),
+        decoration: BoxDecoration(
+          color: myWhite,
+          borderRadius: BorderRadius.circular(
+            dynamicWidth(context, .012),
+          ),
+          gradient: LinearGradient(
+            colors: [
+              gColor1,
+              gColor2,
+            ],
+            begin: Alignment.topCenter,
+          ),
+        ),
+        padding: EdgeInsets.all(
           dynamicWidth(context, .012),
         ),
-        gradient: LinearGradient(
-          colors: [
-            gColor1,
-            gColor2,
-          ],
-          begin: Alignment.topCenter,
-        ),
-      ),
-      padding: EdgeInsets.all(
-        dynamicWidth(context, .012),
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Image.asset(
-                image,
-                height: dynamicHeight(context, .06),
-              ),
-            ],
-          ),
-          heightBox(context, .034),
-          Row(
-            children: [
-              text(
-                context,
-                title,
-                .016,
-                const Color(0xff808080),
-                fontFamily: 'Helvetica',              )
-            ],
-          ),
-          heightBox(context, .006),
-          Row(
-            children: [
-              Container(
-                width: dynamicWidth(context, .13),
-                height: dynamicHeight(context, .04),
-                decoration: BoxDecoration(
-                  color: const Color(0xff1B1B1B),
-                  borderRadius: BorderRadius.circular(
-                    dynamicWidth(context, .002),
-                  ),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Image.asset(
+                  image,
+                  height: dynamicHeight(context, .06),
                 ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: dynamicWidth(context, .002),
-                  ),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton<String>(
-                      key: _dropdownButtonKey,
-                      // value: selectedType == ""
-                      //     ? typeList[0]
-                      //     : selectedType,
-                      iconSize: 20,
-                      elevation: 9,
-                      dropdownColor: const Color(0xff1B1B1B),
-                      isExpanded: true,
-                      onTap: (){
-                        print("object");
-                      },
-                      onChanged: (String? value) async {
-                        // setState(
-                        //       () {
-                        //     selectedType = value.toString();
-                        //   },
-                        // );
-                      },
-                      hint: text(context, dropdownTitle, .006,
-                          const Color(0xffDDDDDD),
-                          fontFamily: 'DMSans',
-                          ),
-                      // style: TextStyle(
-                      //   color: const Color(0xffDDDDDD),
-                      //   fontSize: dynamicWidth(context, .006),
-                      // ),
-                      items: dropdownItems
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: text(context, value, .006, myWhite),
-                        );
-                      }).toList(),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          heightBox(context, .008),
-          Row(
-            children: [
-              Flexible(
-                child: text(
-                  context,
-                  para1,
-                  .007,
-                  
-                  const Color(0xff808080),
-                  maxLines: 7,
-                   fontFamily: 'Helvetica', 
-                ),
-              ),
-            ],
-          ),
-          heightBox(context, .008),
-          Row(
-            children: [
-              text(
-                context,
-                "Requires",
-                .007,
-                const Color(0xff808080),
-                 fontFamily: 'Helvetica', 
-              )
-            ],
-          ),
-          heightBox(context, .008),
-          Padding(
-            padding: EdgeInsets.only(
-              left: dynamicWidth(context, .03),
+              ],
             ),
-            child: Row(
+            heightBox(context, .034),
+            Row(
               children: [
                 text(
                   context,
-                  para2,
-                  .007,
+                  title,
+                  .016,
                   const Color(0xff808080),
-                   fontFamily: 'Helvetica', 
+                  fontFamily: 'Helvetica',
                 )
               ],
             ),
-          ),
-        ],
+            heightBox(context, .006),
+            Row(
+              children: [
+                Container(
+                  width: dynamicWidth(context, .13),
+                  height: dynamicHeight(context, .04),
+                  decoration: BoxDecoration(
+                    color: const Color(0xff1B1B1B),
+                    borderRadius: BorderRadius.circular(
+                      dynamicWidth(context, .002),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: dynamicWidth(context, .002),
+                    ),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        key: _dropdownButtonKey,
+                        // value: selectedType == ""
+                        //     ? typeList[0]
+                        //     : selectedType,
+                        iconSize: 20,
+                        elevation: 9,
+                        dropdownColor: const Color(0xff1B1B1B),
+                        isExpanded: true,
+                        onTap: () {
+                          setState(() {
+                            price = true;
+                          });
+                        },
+                        onChanged: (String? value) async {
+                          setState(() {
+                            price = false;
+                          });
+                          // setState(
+                          //       () {
+                          //     selectedType = value.toString();
+                          //   },
+                          // );
+                        },
+                        hint: text(
+                          context,
+                          dropdownTitle,
+                          .006,
+                          const Color(0xffDDDDDD),
+                          fontFamily: 'DMSans',
+                        ),
+                        // style: TextStyle(
+                        //   color: const Color(0xffDDDDDD),
+                        //   fontSize: dynamicWidth(context, .006),
+                        // ),
+                        items: dropdownItems
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: text(context, value, .006, myWhite),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            heightBox(context, .008),
+            Row(
+              children: [
+                Flexible(
+                  child: text(
+                    context,
+                    para1,
+                    .007,
+                    const Color(0xff808080),
+                    maxLines: 7,
+                    fontFamily: 'Helvetica',
+                  ),
+                ),
+              ],
+            ),
+            heightBox(context, .008),
+            Row(
+              children: [
+                text(
+                  context,
+                  "Requires",
+                  .007,
+                  const Color(0xff808080),
+                  fontFamily: 'Helvetica',
+                )
+              ],
+            ),
+            heightBox(context, .008),
+            Padding(
+              padding: EdgeInsets.only(
+                left: dynamicWidth(context, .03),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  text(
+                    context,
+                    para2,
+                    .007,
+                    const Color(0xff808080),
+                    fontFamily: 'Helvetica',
+                  ),
+                  text(
+                    context,
+                    price == false ? "" : "\$ 10",
+                    .007,
+                    const Color(0xff808080),
+                    fontFamily: 'Helvetica',
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
-    ),
-  );
+    );
+  }
 }
