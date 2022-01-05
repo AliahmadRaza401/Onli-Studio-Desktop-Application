@@ -24,23 +24,15 @@ Widget mainSliderBox(context, image) {
           children: [
             Row(
               children: [
-                text(
-                  context,
-                  "The Onli Presentation",
-                  .014,
-                  myDiscoverHeading,
-                  boldText: FontWeight.w500,
-                ),
+                text(context, "The Onli Presentation", .014, myDiscoverHeading,
+                    boldText: FontWeight.w500, fontFamily: 'DMSans'),
               ],
             ),
             Row(
               children: [
-                text(
-                  context,
-                  "The Fabric of Innovation",
-                  .012,
-                  mySubDiscoverHeading,
-                ),
+                text(context, "The Fabric of Innovation", .012,
+                    mySubDiscoverHeading,
+                    fontFamily: 'OpenSans'),
               ],
             ),
           ],
@@ -74,13 +66,8 @@ Widget secondSlider(context, image, headingColor, subHeadingColor) {
           children: [
             Row(
               children: [
-                text(
-                  context,
-                  "It’s Simpler Than You Think",
-                  .01,
-                  headingColor,
-                  boldText: FontWeight.w600,
-                ),
+                text(context, "It’s Simpler Than You Think", .01, headingColor,
+                    boldText: FontWeight.w600, fontFamily: 'OpenSans'),
               ],
             ),
             Row(
@@ -91,6 +78,7 @@ Widget secondSlider(context, image, headingColor, subHeadingColor) {
                   .008,
                   subHeadingColor,
                   boldText: FontWeight.w500,
+                  fontFamily: 'OpenSans',
                 ),
               ],
             ),
@@ -133,6 +121,7 @@ Widget thirdSlider(context, image, title, {check = false}) {
                 .008,
                 const Color(0xff6F6F6F),
                 boldText: FontWeight.w600,
+                fontFamily: 'OpenSans',
               ),
             ],
           ),
@@ -144,6 +133,7 @@ Widget thirdSlider(context, image, title, {check = false}) {
                 .008,
                 const Color(0xff313131),
                 boldText: FontWeight.w600,
+                fontFamily: 'OpenSans',
               ),
             ],
           ),
@@ -172,7 +162,13 @@ Widget thirdSlider(context, image, title, {check = false}) {
                     size: dynamicWidth(context, .006),
                   ),
                   widthBox(context, .01),
-                  text(context, "(23)", .006, const Color(0xff313131))
+                  text(
+                    context,
+                    "(23)",
+                    .006,
+                    const Color(0xff313131),
+                    fontFamily: 'OpenSans',
+                  )
                 ],
               ),
             ],
@@ -207,11 +203,15 @@ Widget fourthSlider(context, image) {
               text(
                 context,
                 "Dhryl Anton",
-                .008,
-                const Color(0xff6F6F6F),
+                .006,
+                Colors.white,
                 boldText: FontWeight.w600,
+                fontFamily: 'HelveticaNeue_Thin',
               ),
             ],
+          ),
+          SizedBox(
+            height: 3,
           ),
           Row(
             children: [
@@ -221,6 +221,7 @@ Widget fourthSlider(context, image) {
                 .005,
                 const Color(0xff313131),
                 boldText: FontWeight.w600,
+                fontFamily: 'HelveticaNeue_Thin',
               ),
             ],
           ),

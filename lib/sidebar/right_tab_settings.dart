@@ -41,12 +41,14 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                   "Profile Img ",
                   .008,
                   const Color(0xff6D6D6D),
+                  fontFamily: 'OpenSans',
                 ),
                 text(
                   context,
                   "1200 x 400",
                   .006,
                   const Color(0xff6D6D6D),
+                  fontFamily: 'OpenSans',
                 ),
               ],
             ),
@@ -62,6 +64,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                   .008,
                   const Color(0xff6D6D6D),
                   boldText: FontWeight.w600,
+                  fontFamily: 'OpenSans',
                 ),
               ],
             ),
@@ -82,6 +85,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -90,6 +94,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -98,6 +103,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -106,6 +112,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                     ],
                   ),
@@ -118,6 +125,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -126,6 +134,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -134,6 +143,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -142,6 +152,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                     ],
                   ),
@@ -161,6 +172,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                   .008,
                   const Color(0xff6D6D6D),
                   boldText: FontWeight.w600,
+                  fontFamily: 'OpenSans',
                 ),
               ],
             ),
@@ -182,6 +194,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -190,6 +203,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -198,6 +212,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -206,6 +221,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                     ],
                   ),
@@ -218,6 +234,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -226,6 +243,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -234,6 +252,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                       heightBox(context, .008),
                       text(
@@ -242,6 +261,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                         .007,
                         const Color(0xff6D6D6D),
                         boldText: FontWeight.w600,
+                        fontFamily: 'OpenSans',
                       ),
                     ],
                   ),
@@ -261,6 +281,7 @@ class _RightTabSettingsState extends State<RightTabSettings> {
                   .008,
                   const Color(0xff6D6D6D),
                   boldText: FontWeight.w600,
+                  fontFamily: 'OpenSans',
                 ),
               ],
             ),

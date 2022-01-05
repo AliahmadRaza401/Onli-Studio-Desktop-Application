@@ -71,10 +71,11 @@ class _HomePageState extends State<HomePage> {
                             labelStyle: TextStyle(
                               fontSize: dynamicHeight(context, 0.016),
                               fontWeight: FontWeight.bold,
+                              fontFamily: 'DMSans',
                             ),
                             indicatorColor: noColor,
                             tabs: const [
-                              Tab(text: "Discover"),
+                              Tab(text: "Discover" ,),
                               Tab(text: "Learn"),
                               Tab(text: "Build"),
                               Tab(text: "Pricing"),

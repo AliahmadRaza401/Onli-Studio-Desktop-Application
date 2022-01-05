@@ -40,6 +40,7 @@ class _RightTabSearchState extends State<RightTabSearch> {
                   .007,
                   const Color(0xff2e2e2e),
                   boldText: FontWeight.w600,
+                  fontFamily: 'DMSans',
                 ),
               ],
             ),

@@ -40,6 +40,7 @@ class _RightSideBarState extends State<RightSideBar> {
               labelStyle: TextStyle(
                 fontSize: dynamicHeight(context, 0.016),
                 fontWeight: FontWeight.bold,
+                 fontFamily: 'DMSans',
               ),
               indicatorColor: noColor,
               tabs: const [

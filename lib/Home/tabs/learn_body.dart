@@ -66,8 +66,13 @@ class _LearnBodyState extends State<LearnBody> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  text(context, "10 Articles", .01,
-                                      myLightGreyText),
+                                  text(
+                                    context,
+                                    "10 Articles",
+                                    .01,
+                                    myLightGreyText,
+                                    fontFamily: 'DMSans',
+                                  ),
                                 ],
                               ),
                               Row(
@@ -90,6 +95,7 @@ class _LearnBodyState extends State<LearnBody> {
                                             fontSize:
                                                 dynamicWidth(context, 0.015),
                                             fontWeight: FontWeight.w700,
+                                            fontFamily: 'Rufina',
                                           ),
                                         ),
                                         Text(
@@ -98,6 +104,7 @@ class _LearnBodyState extends State<LearnBody> {
                                             color: myLightGreyText,
                                             fontSize:
                                                 dynamicWidth(context, 0.01),
+                                            fontFamily: 'DMSans',
                                           ),
                                         ),
                                       ],
@@ -118,6 +125,7 @@ class _LearnBodyState extends State<LearnBody> {
                                             color: Color(0xffF2FAF0),
                                             fontSize:
                                                 dynamicWidth(context, 0.01),
+                                            fontFamily: 'DMSans',
                                           ),
                                         ),
                                       ],
@@ -133,7 +141,7 @@ class _LearnBodyState extends State<LearnBody> {
                         ),
                         // 2nd Coantianer
                         Container(
-                          height: dynamicHeight(context, .25),
+                          height: dynamicHeight(context, .26),
                           width: dynamicWidth(context, 1),
                           color: Color(0xffD8D8D8),
                           child: Column(
@@ -164,6 +172,7 @@ class _LearnBodyState extends State<LearnBody> {
                                             "Pinned Article & Featured",
                                             0.01,
                                             Color(0xff333333),
+                                            fontFamily: 'Arial',
                                           ),
                                           SizedBox(
                                             height: 5,
@@ -173,6 +182,7 @@ class _LearnBodyState extends State<LearnBody> {
                                             "Author Dhryl Anton, Peter Haxel, Michael McFall",
                                             0.007,
                                             Color(0xffA9A9A9),
+                                            fontFamily: 'Arial',
                                           ),
                                         ],
                                       ),
@@ -188,6 +198,7 @@ class _LearnBodyState extends State<LearnBody> {
                                             "Onli is a protocol. A protocol, in computer science, is a set of rules or procedures that governs the transfer of data between two or more electronic devices. A protocol establishes how the information must be structured and how each party is going to store it, send it and receive it.",
                                             0.006,
                                             Color(0xff333333),
+                                            fontFamily: 'Arial',
                                           ),
                                         ],
                                       ),
@@ -203,6 +214,7 @@ class _LearnBodyState extends State<LearnBody> {
                                             "Onli is a protocol. A protocol, in computer science, is a set of rules or procedures that governs the transfer of data between two or more electronic devices. A protocol establishes how the information must be structured and how each party is going to store it, send it and receive it.",
                                             0.006,
                                             Color(0xff333333),
+                                            fontFamily: 'Arial',
                                           ),
                                         ],
                                       ),
@@ -241,8 +253,13 @@ class _LearnBodyState extends State<LearnBody> {
                                       ),
                                       Row(
                                         children: [
-                                          text(context, "Download WhitePaper",
-                                              0.006, Color(0xff757171)),
+                                          text(
+                                            context,
+                                            "Download WhitePaper",
+                                            0.006,
+                                            Color(0xff757171),
+                                            fontFamily: 'Arial',
+                                          ),
                                           SizedBox(
                                             width: 15,
                                           ),
@@ -280,6 +297,7 @@ class _LearnBodyState extends State<LearnBody> {
                   "Articles on this subject.",
                   .01,
                   Color(0xff6D6D6D),
+                  fontFamily: 'OpenSans',
                 ),
               ],
             ),
@@ -352,7 +370,7 @@ class _LearnBodyState extends State<LearnBody> {
           horizontal: dynamicWidth(context, .002),
         ),
         child: SizedBox(
-          height: dynamicHeight(context, 0.2),
+          height: dynamicHeight(context, 0.23),
           width: dynamicWidth(context, .18),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -371,9 +389,10 @@ class _LearnBodyState extends State<LearnBody> {
                   text(
                     context,
                     title,
-                    .008,
+                    .007,
                     Color(0xff6F6F6F),
                     boldText: FontWeight.w600,
+                    fontFamily: 'OpenSans',
                   ),
                 ],
               ),
@@ -382,9 +401,10 @@ class _LearnBodyState extends State<LearnBody> {
                   text(
                     context,
                     "Author Name",
-                    .008,
+                    .006,
                     Color(0xff313131),
                     boldText: FontWeight.w600,
+                    fontFamily: 'OpenSans',
                   ),
                 ],
               ),

@@ -64,6 +64,7 @@ class _IntroState extends State<Intro> {
                           .008,
                           myWhite,
                           boldText: FontWeight.w300,
+                          fontFamily: 'OpenSans',
                         ),
                       ],
                     ),
@@ -100,14 +101,11 @@ class _IntroState extends State<Intro> {
                             .008,
                             const Color(0xff8E8E93),
                             boldText: FontWeight.w300,
+                            fontFamily: 'Helvetica',
                           ),
-                          text(
-                            context,
-                            "Log in with",
-                            .01,
-                            const Color(0xffE1C79B),
-                            boldText: FontWeight.w300,
-                          ),
+                          text(context, "Log in with", .01,
+                              const Color(0xffE1C79B),
+                              boldText: FontWeight.w300, fontFamily: "Lato"),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [

@@ -45,6 +45,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
                     color: myBlueTitle,
                     fontSize: dynamicWidth(context, 0.01),
                     fontWeight: FontWeight.w700,
+                    fontFamily: 'Rufina',
                   ),
                 ),
               ),
@@ -155,6 +156,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
                   style: TextStyle(
                     color: myLightGreyText,
                     fontSize: dynamicHeight(context, 0.015),
+                    fontFamily: 'DMSans',
                   ),
                 ),
                 Icon(
@@ -185,6 +187,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
             style: TextStyle(
               color: myWhite,
               fontSize: dynamicHeight(context, .015),
+              fontFamily: 'DMSans',
             ),
           ),
           Text(

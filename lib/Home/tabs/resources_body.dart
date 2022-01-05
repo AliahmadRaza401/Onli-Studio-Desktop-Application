@@ -60,6 +60,7 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                       0.035,
                       Colors.black,
                       boldText: FontWeight.w700,
+                      fontFamily: 'CormorantGaramond',
                     ),
                     Row(
                       children: [
@@ -103,6 +104,7 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                               style: TextStyle(
                                 fontSize: dynamicWidth(context, 0.008),
                                 fontWeight: FontWeight.bold,
+                                fontFamily: 'CormorantGaramond',
                               ),
                             ),
                             SizedBox(
@@ -112,6 +114,7 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                               t2,
                               style: TextStyle(
                                 fontSize: dynamicWidth(context, 0.008),
+                                fontFamily: 'CormorantGaramond',
                               ),
                             ),
                           ],
@@ -138,6 +141,7 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                           "24",
                           0.015,
                           const Color(0xff464646),
+                          fontFamily: 'Exo',
                         ),
                         const SizedBox(
                           width: 5,
@@ -151,12 +155,14 @@ class _ResourcesBodyState extends State<ResourcesBody> {
                               "MARCH",
                               0.007,
                               const Color(0xff858685),
+                              fontFamily: 'Exo',
                             ),
                             text(
                               context,
                               "2021",
                               0.007,
                               const Color(0xff858685),
+                              fontFamily: 'Exo',
                             ),
                           ],
                         ),

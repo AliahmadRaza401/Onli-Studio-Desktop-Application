@@ -96,8 +96,9 @@ class DiscoverBody extends StatelessWidget {
                 text(
                   context,
                   "Articles",
-                  .014,
+                  .013,
                   const Color(0xff6D6D6D),
+                  fontFamily: 'OpenSans',
                 ),
               ],
             ),
@@ -109,7 +110,7 @@ class DiscoverBody extends StatelessWidget {
             ),
 
             SizedBox(
-              height: dynamicHeight(context, 0.17),
+              height: dynamicHeight(context, 0.2),
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
@@ -159,8 +160,9 @@ class DiscoverBody extends StatelessWidget {
                 text(
                   context,
                   "Community",
-                  .014,
+                  .013,
                   const Color(0xff6D6D6D),
+                  fontFamily: 'OpenSans',
                 ),
               ],
             ),

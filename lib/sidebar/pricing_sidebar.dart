@@ -23,8 +23,20 @@ class _PricingSideBarState extends State<PricingSideBar> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                text(context, "Welcome Dhryl", 0.008, Color(0xff707070)),
-                text(context, "LogOut", 0.008, Color(0xff707070)),
+                text(
+                  context,
+                  "Welcome Dhryl",
+                  0.008,
+                  Color(0xff707070),
+                  fontFamily: 'OpenSans',
+                ),
+                text(
+                  context,
+                  "LogOut",
+                  0.008,
+                  Color(0xff707070),
+                  fontFamily: 'HelveticaNeue_Thin',
+                ),
               ],
             ),
             SizedBox(
@@ -32,7 +44,15 @@ class _PricingSideBarState extends State<PricingSideBar> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [text(context, 'Pricing', 0.013, Color(0xff929292))],
+              children: [
+                text(
+                  context,
+                  'Pricing',
+                  0.013,
+                  Color(0xff929292),
+                  fontFamily: 'DMSans',
+                )
+              ],
             ),
             SizedBox(
               height: dynamicHeight(context, 0.007),
@@ -40,7 +60,13 @@ class _PricingSideBarState extends State<PricingSideBar> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                text(context, 'July 7th 2020', 0.009, Color(0xff929292))
+                text(
+                  context,
+                  'July 7th 2020',
+                  0.009,
+                  Color(0xff929292),
+                  fontFamily: 'DMSans',
+                )
               ],
             ),
             SizedBox(
