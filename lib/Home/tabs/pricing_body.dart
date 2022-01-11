@@ -37,24 +37,29 @@ class _PricingBodyState extends State<PricingBody> {
       child: Padding(
         padding: EdgeInsets.only(
           top: dynamicHeight(context, .07),
-          left: dynamicWidth(context, .06),
         ),
         child: Column(
           children: [
-            Row(
-              children: [
-                text(
-                  context,
-                  "Let’s configure your onli.cloud",
-                  .02,
-                  myWhite,
-                  fontFamily: 'OpenSans',
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.only(
+                left: dynamicWidth(context, .06),
+              ),
+              child: Row(
+                children: [
+                  text(
+                    context,
+                    "Let’s configure your onli.cloud",
+                    .02,
+                    myWhite,
+                    fontFamily: 'OpenSans',
+                  ),
+                ],
+              ),
             ),
             Padding(
               padding: EdgeInsets.only(
                 top: dynamicHeight(context, .02),
+                left: dynamicWidth(context, .06),
               ),
               child: Row(
                 children: [
@@ -257,6 +262,9 @@ class _PricingBodyState extends State<PricingBody> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
+                  SizedBox(
+                    width: dynamicWidth(context, .056),
+                  ),
                   pricingCard(
                     context,
                     myWhite,
@@ -411,11 +419,6 @@ class _PricingBodyState extends State<PricingBody> {
                           setState(() {
                             price = false;
                           });
-                          // setState(
-                          //       () {
-                          //     selectedType = value.toString();
-                          //   },
-                          // );
                         },
                         hint: text(
                           context,
@@ -424,10 +427,6 @@ class _PricingBodyState extends State<PricingBody> {
                           const Color(0xffDDDDDD),
                           fontFamily: 'DMSans',
                         ),
-                        // style: TextStyle(
-                        //   color: const Color(0xffDDDDDD),
-                        //   fontSize: dynamicWidth(context, .006),
-                        // ),
                         items: dropdownItems
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(

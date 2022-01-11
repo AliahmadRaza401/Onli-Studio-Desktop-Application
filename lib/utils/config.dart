@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 const myWhite = Color(0xffffffff);
 const myBlack = Color(0xff000000);
@@ -15,3 +16,6 @@ const myDiscoverHeading = Color(0xffE6F0E4);
 const mySubDiscoverHeading = Color(0xff919F8E);
 
 bool obscureText = true;
+
+dynamic menuNumber = 0;
+dynamic textNumber = 0.obs;

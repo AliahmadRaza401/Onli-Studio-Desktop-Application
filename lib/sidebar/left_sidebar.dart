@@ -4,6 +4,8 @@ import 'package:onli_studio/provider/my_provider.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
+
 
 class LeftSideBar extends StatefulWidget {
   const LeftSideBar({Key? key}) : super(key: key);
@@ -26,6 +28,11 @@ class _LeftSideBarState extends State<LeftSideBar> {
   bool c3 = false;
   bool c4 = false;
   bool c5 = false;
+  bool c6 = false;
+  bool c7 = false;
+  bool c8 = false;
+  bool c9 = false;
+  bool c10 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -56,75 +63,121 @@ class _LeftSideBarState extends State<LeftSideBar> {
                 ),
               ),
               InkWell(
-                  onTap: () {
-                    setState(() {
-                      _myProvider.selectMenu(1);
-                    });
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(
-                          menuNum: 1,
-                        ),
-                      ),
-                    );
-                  },
-                  child: heading(context, "Onli", "", () {})),
+                onTap: () {
+                  textNumber = 1;
+                  setState(() {
+                    c6 = !c6;
+
+                    // _myProvider.selectMenu(1);
+                  });
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => const HomePage(
+                  //       menuNum: 1,
+                  //     ),
+                  //   ),
+                  // );
+                },
+                child: headingSelect(
+                  context,
+                  "Onli",
+                  "",
+                  c6,
+                ),
+              ),
               InkWell(
-                  onTap: () {
-                    setState(() {
-                      _myProvider.selectMenu(2);
-                    });
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(
-                          menuNum: 1,
-                        ),
-                      ),
-                    );
-                  },
-                  child: heading(context, "Onli iD", "", () {})),
+                onTap: () {
+                  print("object $textNumber");
+
+                  textNumber = 2;
+                  setState(() {
+                    c7 = !c7;
+
+                    // _myProvider.selectMenu(2);
+                  });
+                  print("object $textNumber");
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => const HomePage(
+                  //       menuNum: 1,
+                  //     ),
+                  //   ),
+                  // );
+                },
+                child: headingSelect(
+                  context,
+                  "Onli ID",
+                  "",
+                  c7,
+                ),
+              ),
               InkWell(
-                  onTap: () {
-                    setState(() {
-                      _myProvider.selectMenu(3);
-                    });
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(
-                          menuNum: 1,
-                        ),
-                      ),
-                    );
-                  },
-                  child: heading(context, "Onli Build", "", () {})),
+                onTap: () {
+                  setState(() {
+                    c8 = !c8;
+                    textNumber = 3;
+                    // _myProvider.selectMenu(3);
+                  });
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => const HomePage(
+                  //       menuNum: 1,
+                  //     ),
+                  //   ),
+                  // );
+                },
+                child: headingSelect(
+                  context,
+                  "Onli Build",
+                  "",
+                  c8,
+                ),
+              ),
               InkWell(
-                  onTap: () {
-                    setState(() {
-                      _myProvider.selectMenu(4);
-                    });
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(
-                          menuNum: 1,
-                        ),
-                      ),
-                    );
-                  },
-                  child: heading(context, "Onli Cloud", "", () {})),
+                onTap: () {
+                  setState(() {
+                    c9 = !c9;
+                    textNumber = 4;
+                    // _myProvider.selectMenu(4);
+                  });
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => const HomePage(
+                  //       menuNum: 1,
+                  //     ),
+                  //   ),
+                  // );
+                },
+                child: headingSelect(
+                  context,
+                  "Onli Cloud",
+                  "",
+                  c9,
+                ),
+              ),
               GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _myProvider.selectMenu(5);
-                    });
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(
-                          menuNum: 1,
-                        ),
-                      ),
-                    );
-                  },
-                  child: heading(context, "Onli One", "", () {})),
+                onTap: () {
+                  setState(() {
+                    c10 = !c10;
+                    textNumber = 5;
+                    // _myProvider.selectMenu(5);
+                    // menuNumber = 1;
+                  });
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => const HomePage(
+                  //       menuNum: 1,
+                  //     ),
+                  //   ),
+                  // );
+                },
+                child: headingSelect(
+                  context,
+                  "Onli One",
+                  "",
+                  c10,
+                ),
+              ),
               Container(
                 margin: EdgeInsets.symmetric(
                   horizontal: dynamicWidth(context, .01),
@@ -252,7 +305,6 @@ class _LeftSideBarState extends State<LeftSideBar> {
           children: [
             Container(
               padding: EdgeInsets.symmetric(
-                // horizontal: dynamicHeight(context, .03),
                 vertical: dynamicHeight(context, .02),
               ),
               margin: EdgeInsets.symmetric(
@@ -289,12 +341,15 @@ class _LeftSideBarState extends State<LeftSideBar> {
             ),
             bool == true
                 ? Container(
-                    height: dynamicHeight(context, .05),
+                    // height: dynamicHeight(context, .05),
                     width: dynamicHeight(context, .005),
-                    color: Color(0xff2cb56e),
-                    child: Text(""),
+                    color: const Color(0xff2cb56e),
+                    padding: EdgeInsets.symmetric(
+                      vertical: dynamicHeight(context, .022),
+                    ),
+                    child: const Text(""),
                   )
-                : SizedBox(
+                : const SizedBox(
                     width: 5,
                   ),
           ],
