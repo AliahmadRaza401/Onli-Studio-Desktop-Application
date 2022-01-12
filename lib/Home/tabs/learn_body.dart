@@ -124,7 +124,7 @@ class _LearnBodyState extends State<LearnBody> {
                                       Obx(
                                         () {
                                           return Text(
-                                            textNumber.toString(),
+                                            getDec(),
                                             style: TextStyle(
                                               color: Color(0xffF2FAF0),
                                               fontSize:

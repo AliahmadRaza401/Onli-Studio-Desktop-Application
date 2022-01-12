@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:onli_studio/Home/home_page.dart';
 import 'package:onli_studio/provider/my_provider.dart';
 import 'package:onli_studio/utils/config.dart';
 import 'package:onli_studio/utils/dynamic_sizes.dart';
 import 'package:provider/provider.dart';
-import 'package:get/get.dart';
-
 
 class LeftSideBar extends StatefulWidget {
   const LeftSideBar({Key? key}) : super(key: key);
@@ -28,11 +25,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
   bool c3 = false;
   bool c4 = false;
   bool c5 = false;
-  bool c6 = false;
-  bool c7 = false;
-  bool c8 = false;
-  bool c9 = false;
-  bool c10 = false;
+  dynamic ci = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +57,12 @@ class _LeftSideBarState extends State<LeftSideBar> {
               ),
               InkWell(
                 onTap: () {
-                  textNumber = 1;
+                  textNumber.value = 1;
+                  menuNumber.value = 1;
+
                   setState(() {
-                    c6 = !c6;
+                    ci = 1;
+                    // tabController?.index = 1;
 
                     // _myProvider.selectMenu(1);
                   });
@@ -82,20 +78,21 @@ class _LeftSideBarState extends State<LeftSideBar> {
                   context,
                   "Onli",
                   "",
-                  c6,
+                  ci == 1 ? true : false,
                 ),
               ),
               InkWell(
                 onTap: () {
-                  print("object $textNumber");
+                  textNumber.value = 2;
+                  menuNumber.value = 1;
 
-                  textNumber = 2;
+                  // textNumber.value = 2;
                   setState(() {
-                    c7 = !c7;
-
+                    ci = 2;
+                    // tabController?.index = 1;
                     // _myProvider.selectMenu(2);
                   });
-                  print("object $textNumber");
+                  // print("object $textNumber");
                   // Navigator.of(context).push(
                   //   MaterialPageRoute(
                   //     builder: (context) => const HomePage(
@@ -108,14 +105,17 @@ class _LeftSideBarState extends State<LeftSideBar> {
                   context,
                   "Onli ID",
                   "",
-                  c7,
+                  ci == 2 ? true : false,
                 ),
               ),
               InkWell(
                 onTap: () {
+                  textNumber.value = 3;
+                  menuNumber.value = 1;
                   setState(() {
-                    c8 = !c8;
-                    textNumber = 3;
+                    ci = 3;
+
+                    // textNumber.value = 3;
                     // _myProvider.selectMenu(3);
                   });
                   // Navigator.of(context).push(
@@ -130,14 +130,17 @@ class _LeftSideBarState extends State<LeftSideBar> {
                   context,
                   "Onli Build",
                   "",
-                  c8,
+                  ci == 3 ? true : false,
                 ),
               ),
               InkWell(
                 onTap: () {
+                  textNumber.value = 4;
+                  menuNumber.value = 1;
                   setState(() {
-                    c9 = !c9;
-                    textNumber = 4;
+                    ci = 4;
+                    // menuNumber == 2 ? menuNumber : 2;
+                    // textNumber.value = 4;
                     // _myProvider.selectMenu(4);
                   });
                   // Navigator.of(context).push(
@@ -152,14 +155,17 @@ class _LeftSideBarState extends State<LeftSideBar> {
                   context,
                   "Onli Cloud",
                   "",
-                  c9,
+                  ci == 4 ? true : false,
                 ),
               ),
               GestureDetector(
                 onTap: () {
+                  textNumber.value = 5;
+                  menuNumber.value = 1;
                   setState(() {
-                    c10 = !c10;
-                    textNumber = 5;
+                    ci = 5;
+                    // menuNumber.value = 2;
+                    // textNumber.value = 5;
                     // _myProvider.selectMenu(5);
                     // menuNumber = 1;
                   });
@@ -175,7 +181,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
                   context,
                   "Onli One",
                   "",
-                  c10,
+                  ci == 5 ? true : false,
                 ),
               ),
               Container(

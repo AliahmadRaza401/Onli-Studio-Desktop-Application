@@ -17,5 +17,6 @@ const mySubDiscoverHeading = Color(0xff919F8E);
 
 bool obscureText = true;
 
-dynamic menuNumber = 0;
+dynamic menuNumber = 0.obs;
 dynamic textNumber = 0.obs;
+// TabController? tabController;
