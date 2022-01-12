@@ -62,17 +62,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
 
                   setState(() {
                     ci = 1;
-                    // tabController?.index = 1;
-
-                    // _myProvider.selectMenu(1);
                   });
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => const HomePage(
-                  //       menuNum: 1,
-                  //     ),
-                  //   ),
-                  // );
                 },
                 child: headingSelect(
                   context,
@@ -86,20 +76,9 @@ class _LeftSideBarState extends State<LeftSideBar> {
                   textNumber.value = 2;
                   menuNumber.value = 1;
 
-                  // textNumber.value = 2;
                   setState(() {
                     ci = 2;
-                    // tabController?.index = 1;
-                    // _myProvider.selectMenu(2);
                   });
-                  // print("object $textNumber");
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => const HomePage(
-                  //       menuNum: 1,
-                  //     ),
-                  //   ),
-                  // );
                 },
                 child: headingSelect(
                   context,
@@ -114,17 +93,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
                   menuNumber.value = 1;
                   setState(() {
                     ci = 3;
-
-                    // textNumber.value = 3;
-                    // _myProvider.selectMenu(3);
                   });
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => const HomePage(
-                  //       menuNum: 1,
-                  //     ),
-                  //   ),
-                  // );
                 },
                 child: headingSelect(
                   context,
@@ -139,17 +108,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
                   menuNumber.value = 1;
                   setState(() {
                     ci = 4;
-                    // menuNumber == 2 ? menuNumber : 2;
-                    // textNumber.value = 4;
-                    // _myProvider.selectMenu(4);
                   });
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => const HomePage(
-                  //       menuNum: 1,
-                  //     ),
-                  //   ),
-                  // );
                 },
                 child: headingSelect(
                   context,
@@ -164,18 +123,7 @@ class _LeftSideBarState extends State<LeftSideBar> {
                   menuNumber.value = 1;
                   setState(() {
                     ci = 5;
-                    // menuNumber.value = 2;
-                    // textNumber.value = 5;
-                    // _myProvider.selectMenu(5);
-                    // menuNumber = 1;
                   });
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (context) => const HomePage(
-                  //       menuNum: 1,
-                  //     ),
-                  //   ),
-                  // );
                 },
                 child: headingSelect(
                   context,
